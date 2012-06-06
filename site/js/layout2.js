@@ -3,13 +3,56 @@
 //jQuery for work.  Nothing is all that complex, and it is commented, but
 //when time permits I plan to clean it up.  If you are
 //stuck and want help you can email me at coakleytom@hotmail.com. Please
-//include a link to the site you are working on in the email.  
+//include a link to the site you are working on in the email.
 
 window.addEvent('domready', function() {
-    
+    $('mailingList').addEvent('click', function(e) {
+        var obj = new Element('div', {
+            'id': 'dummy',
+            'events': {
+                'click': function(){
+                    sendComment();
+                    this.destroy();
+                }
+            }
+        });
+        var myMessage = new Message({
+            icon: "questionMedium.png",
+            iconPath: "/images/",
+            width: 300,
+            fontSize: 14,
+            passEvent: e,
+            autoDismiss: false,
+            title: 'Email Address:' ,
+            message: '<input type="text" id="emailAddress" class="emailAddress"/>',
+            callback: obj,
+            yesLink: "Signup",
+            noLink: "Cancel"
+        }).say();
+        $('emailAddress').focus();
+        $('emailAddress').addEvent( 'keydown', function( evt ){
+            if( evt.key == 'enter' ) {
+                $('SignupLink').fireEvent('click');
+
+            }
+
+        });
+    });
+    var sendComment = function(){
+        new Message({
+            icon: "okMedium.png",
+            iconPath: "/images/",
+            title: "Received!",
+            message: "Thank you for your interest."
+        }).say();
+        var emailAddress = $('emailAddress').value;
+        new Request({
+            url: '/emailSignup.php?emailAddress=' + emailAddress,
+        }).send();
+    }
 });
 window.addEvent('load', function() {
-    
+
     // Control Variables
     var backgroundLoaded = false;
     var animationComplete = false;
@@ -18,7 +61,7 @@ window.addEvent('load', function() {
     var openPanel = null;
     var panelWidth = 320;
     var panelWidthOpen = 900;
-    
+
     var panelLocs = {
         zumba: {
             panel: 10,
@@ -41,7 +84,7 @@ window.addEvent('load', function() {
             Right: 960
         }
     };
-    
+
     var panelContent = {
         zumba: {
             standard: '/getContent.php?sn=zumba&fn=zumbaContent',
@@ -58,52 +101,65 @@ window.addEvent('load', function() {
     }
 
     // Handle loading of the full color background
-    var colorBackground = new Asset.image('/images/layout/contentBackground2.jpg', {
+    // Must load from a different domain for it to work correctly in firefox. *boggle*
+    var preventCache = Number.random(1,100000);
+    var colorBackground = new Asset.image('/images/layout/contentBackground2.jpg?' + preventCache, {
         id: 'contentBackground2Image',
         onLoad: backgroundLoadComplete
     });
+
     function backgroundLoadComplete() {
-        backgroundLoaded = true;
-        if (animationComplete) {
-            displayColorBackground();
+        colorBackground.inject($('contentBackground2'));
+        checkBackgroundLoad();
+    }
+
+    function checkBackgroundLoad() {
+        if ($('contentBackground2').getSize().y > 790) {
+            backgroundLoaded = true;
+            if (animationComplete) {
+                displayColorBackground();
+            }
+        } else {
+            (function(){
+                checkBackgroundLoad();
+            }).delay(750, this);
         }
     }
+
     function displayColorBackground() {
         backgroundShown = true;
-        var contentBackground = $('contentBackground2');
-        colorBackground.inject(contentBackground);
         $('contentBackground1').set('morph', {duration: 1000, transition: Fx.Transitions.Quart.easeInOut});
         $('contentBackground1').morph({opacity: [0]});
     }
-    
+
     // Handle initial load animations
     var contentBackground1Morph = new Fx.Morph('contentBackground1', {
         duration: 400,
         transition: Fx.Transitions.Sine.easeOut
     });
-    contentBackground1Morph.addEvent('complete', function() { 
+    contentBackground1Morph.addEvent('complete', function() {
         animationComplete = true;
+        $('contentBackground2').setStyle('display', 'block');
         if (backgroundLoaded && !backgroundShown) {
             displayColorBackground();
         }
         showLogos();
         fadeContentPanels();
-//        slideContentPanels();
     });
     contentBackground1Morph.start({'opacity': 1});
-    
+
     function showLogos() {
         $$('.logoFade').set('morph', {duration: 600, transition: Fx.Transitions.Quart.easeInOut});
         $$('.logoFade').morph({opacity: [1]});
     }
-    
+
     function fadeContentPanels() {
         fadePanel('zumbaCanister', 'zumbaContent', 500);
         fadePanel('yogaCanister', 'yogaContent', 800);
         fadePanel('doTerraCanister', 'doTerraContent', 1100);
 
     }
-    
+
     function fadePanel(panelName, contentName, delay){
         primeFade($(panelName));
         var spTween = new Fx.Tween(panelName, {
@@ -111,19 +167,19 @@ window.addEvent('load', function() {
             transition: Fx.Transitions.Quart.easeInOut,
             property: 'opacity'
         });
-        spTween.addEvent('complete', function() { 
+        spTween.addEvent('complete', function() {
             if (panelName == 'doTerraCanister') {
-                activateLinks();
+//                activateLinks();
             }
         });
-        spTween.start.delay(delay, spTween, 1); 
+        spTween.start.delay(delay, spTween, 1);
     }
-    
+
     function primeFade(element) {
         element.setStyle('opacity', 0);
         element.setStyle('display', 'block');
     }
-    
+
     function activateLinks() {
         setClickable(true);
         switch(openPanel) {
@@ -250,7 +306,7 @@ window.addEvent('load', function() {
             });
         }).delay(700);
     }
-   
+
     function panelToSlide(sectionName, direction) {
         setClickable(false);
         var panelMargin = $(sectionName + 'Wrapper').getCoordinates('content').left;
@@ -261,10 +317,10 @@ window.addEvent('load', function() {
         if (panelWidth > 400) {
             sliderMarginLeft = panelLocs[sectionName].sliderFull;
         }
-        
+
         var sliderText = new Element("div", {
-           "id" : sectionName + 'SliderText' + direction,
-           "class" : 'panelSliderText'
+            "id" : sectionName + 'SliderText' + direction,
+            "class" : 'panelSliderText'
         });
         var slider = new Element("div", {
             "id" : sectionName + "Slider",
@@ -276,7 +332,7 @@ window.addEvent('load', function() {
         });
         sliderText.inject(slider);
         slider.inject('content');
-        
+
         // show the slide panel
         $(sectionName + 'Wrapper').set('morph', {duration: 500, transition: Fx.Transitions.Quart.easeInOut});
         $(sectionName + 'Wrapper').morph({
@@ -296,6 +352,7 @@ window.addEvent('load', function() {
     }
 
     function slideToPanel(sectionName) {
+        setClickable(false);
         fadeAway(sectionName + "Content", 'standard', sectionName);
         var sliderMorph = new Fx.Morph($(sectionName + "Slider"), {
             duration: 600,
@@ -319,6 +376,7 @@ window.addEvent('load', function() {
     }
 
     function slideToMax(sectionName) {
+        setClickable(false);
         openPanel = sectionName;
         fadeAway(sectionName + "Content", 'max');
         var sliderMorph = new Fx.Morph($(sectionName + "Slider"), {
@@ -347,8 +405,9 @@ window.addEvent('load', function() {
             });
         }).delay(1000);
     }
-    
+
     function maximizePanel() {
+        setClickable(false);
         fadeAway(openPanel + "Content", 'max');
         var panelMorph = new Fx.Morph($(openPanel + "Wrapper"), {
             duration: 700,
@@ -368,18 +427,22 @@ window.addEvent('load', function() {
     }
 
     function minimizePanel() {
-        fadeAway(openPanel + "Content",'standard');
-        var panelMorph = new Fx.Morph($(openPanel + "Wrapper"), {
+        setClickable(false);
+        targetPanel = openPanel;
+        fadeAway(targetPanel + "Content",'standard');
+        var panelMorph = new Fx.Morph($(targetPanel + "Wrapper"), {
             duration: 700,
             transition: Fx.Transitions.Quart.easeInOut
         });
         panelMorph.addEvent('complete', function(el) {
-            $(openPanel + "Content").removeClass('scrollable');
-            fadeIn(openPanel + "Content", true);
+            $(targetPanel + "Content").removeClass('scrollable');
+            openPanel = null;
+            fadeIn(targetPanel + "Content", true);
+
         });
         panelMorph.start({
             'width': panelWidth,
-            'margin-left': panelLocs[openPanel].panel
+            'margin-left': panelLocs[targetPanel].panel
         });
     }
 
@@ -394,6 +457,7 @@ window.addEvent('load', function() {
         });
         if (loadContent !== undefined) {
             fadeTween.addEvent('complete', function() {
+                $(targetPanel + 'Content').empty();
                 $(targetPanel + 'Content').load(panelContent[targetPanel][loadContent]);
             });
         }
@@ -416,7 +480,7 @@ window.addEvent('load', function() {
 
 
 // Notes that may be handy for other development
-    
+
 //    $$('.panelContent, .panelHeaderText').set('morph', {duration: 900, transition: Fx.Transitions.Quart.easeInOut});
 //    $$('.panelContent, .panelHeaderText').morph({opacity: [1]});
 //    
@@ -463,7 +527,7 @@ window.addEvent('load', function() {
 //        });
 //        spTween.start.delay(delay, spTween, 0); 
 //    }
-    
+
 
 
 });
