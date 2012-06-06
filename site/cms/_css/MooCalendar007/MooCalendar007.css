@@ -1,0 +1,53 @@
+#mc007C {
+	border: 1px solid #555;
+	background: #fff;
+}
+#mc007C .clear {
+	clear: both;
+}
+#mc007C .DragBar {
+	background: #555;
+	text-align: left;
+	color: #fff;
+	padding: 0 0 0 8px;
+}
+#mc007C .CloseButton {
+	float:right;
+	width: 21px;
+	height: 21px;
+	display: inline;
+	font-weight: bold;
+	/*
+	background-image: url(CloseButton.png);
+	background-repeat: no-repeat;
+	*/
+}
+#mc007C .CalBackground {
+	background: #fff;
+}
+#mc007C .MonthName {
+	color: #FB7900;
+	font-weight: bold;
+}
+#mc007C .ArrowLeft {
+	color: #000;
+	font-weight: bold;
+}
+#mc007C .ArrowRight {
+	color: #000;
+	font-weight: bold;
+}
+#mc007C .DayName {
+	color: #000;
+	font-weight: bold;
+}
+#mc007C .DifferentMonth {
+	color: #999;	
+	font-size: 11px;
+	font-weight: bold;
+}
+#mc007C .ThisMonth {
+	color: #000;
+	font-size: 11px;
+	font-weight: bold;
+}

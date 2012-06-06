@@ -1,0 +1,26 @@
+/* =========== */
+/* Header Code */
+#Header {
+    height: 105px;
+    color: #ccc;
+    padding: 10px 30px 0 30px;
+
+}
+#Header .Name {
+    position: absolute:
+    display: inline;
+    height: 100px;
+    width: 300px;
+    float: left;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+#Header .Location {
+    float: right;
+    display: inline-block;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 70px 0 0 0;
+}

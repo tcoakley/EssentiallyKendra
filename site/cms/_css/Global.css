@@ -1,0 +1,48 @@
+/* =========== */
+/* Global Code */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+    color: #000;    
+    background-color: #000;
+}
+a, a:active {
+    color: #29b900;
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+.clear {
+    clear:both;
+}
+
+.pngFix {
+    behavior: url(iepngfix.htc);
+}
+
+.FloatLeft {
+    float: left;
+    display: inline;
+}
+.FloatRight {
+    float: right;
+    display: inline;
+}
+#OuterContainer {
+    background-image: url(../_img/TopBG.png);
+    background-repeat: repeat-x;
+    padding: 20px 30px 0 30px;
+    margin: 0 0 20px 0;
+    z-index: 2;
+    behavior: url(iepngfix.htc);
+}
+#MainMenu {
+    background-color: #000;
+}

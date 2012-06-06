@@ -1,0 +1,62 @@
+#TabTable {
+
+	padding: 0;
+	margin: 0;
+	display: block;
+}
+
+#TabTable ul {
+	padding: 0;
+	margin: 0;
+	font-weight: bold;
+	list-style-type: none;
+	overflow: hidden;
+}
+
+#TabTable li {
+	display: inline;
+	margin: 0;
+}
+
+#TabTable li a {
+	float: left;
+	display: block;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	background: #000;
+	color: #eee;
+	margin: 0 8px 0 0;
+}
+
+#TabTable li.selected a {
+	background-image: url(../_img/TabBG.jpg);
+	background-repeat: repeat-x;
+	background-color: #fff;
+	color: #333;
+}
+
+#TabTable li a:hover{
+	background-color: #fff;
+	background-image: url(../_img/TabBG.jpg);
+	background-repeat: repeat-x;
+	
+	color: #333;
+}
+
+#TabTable li.PageFunction {
+	background: #eee;
+	font-weight: bold;
+	color: #9f009f;
+	float: left;
+	display: block;
+	font-size: 14px;
+	margin: 0 0 0 10px;
+}
+
+#TabContent {
+	padding: 20px;
+	background-color: #fff;
+	margin: 0;
+	min-height: 300px;
+}

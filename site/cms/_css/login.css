@@ -1,0 +1,15 @@
+#LoginDiv {
+	width: 450px;
+	margin: 100px auto 100px auto;
+	padding: 10px 10px 20px 10px;
+	border: 1px solid #111;
+	background-color: #fff;
+}
+
+#LoginDiv .info {
+	margin: 0 0 10px 0;
+}
+
+#LoginDiv .forgot {
+	margin: 10px 0 0 0;
+}

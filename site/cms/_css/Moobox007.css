@@ -1,0 +1,46 @@
+#mb7Overlay {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	background-color: #000;
+	cursor: pointer;
+}
+#mb7Canister {
+	position: absolute;
+	z-index:101;
+	overflow:hidden;
+	left: 50%;
+	top:10%;
+	background-color: #fff;
+	border: 5px solid #fff;
+	margin:0; 
+	padding:5px;
+}
+#mb7Video {
+	width: 400px;
+	height: 284px;
+	background: #000;
+}
+#mb7CloseButton {
+	float: right;
+	display: inline;
+	width: 20px;
+	height: 40px;
+	margin: 5px;
+	overflow: hidden;
+	background: url(close.gif) no-repeat center;
+	cursor: pointer;
+}
+#mb7CaptionText {
+	float: left;
+	display: inline;
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	font-weight: normal;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	letter-spacing: -1px;
+	color: #000;
+	line-height: 40px;
+}

@@ -1,0 +1,132 @@
+.CategoryHeader {
+	display: inline;
+	float: left;
+	width: 220px;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 0 0 4px 4px;
+}
+.CategoryColumnWrapper {
+	border: 2px solid #000;
+}
+.CategoryColumn {
+	display: inline;
+	float: left;
+	width: 212px;
+	height: 300px;
+	border:2px solid #000;
+	padding: 4px;
+}
+
+.ColumnContainer {
+	display: block;
+	position: absolute;
+	overflow: hidden;
+	width: 212px;
+	height: 300px;
+}
+.scrollContent {
+	width: 192px;
+}
+.CategoryRow {
+	font-size: 11px;
+	font-weight: bold;
+	height: 18px;
+	line-height: 18px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	cursor: pointer;
+}
+.CategoryRow:hover {
+	border-top: 1px dashed #ccc;
+	border-bottom: 1px dashed #ccc;
+} 
+.Loading {
+	background-image: url(loading.gif);
+	background-repeat: no-repeat;
+	width: 66px;
+	height: 66px;
+	margin: 115px 0 0 73px;
+}
+.LoadingProducts {
+	background-image: url(loading.gif);
+	background-repeat: no-repeat;
+	width: 66px;
+	height: 66px;
+	margin: 20px 0 0 417px;
+}
+#ProductsList {
+	margin: 10px 0 0 0;
+}
+#ProductsList .ProductRow {
+	height: 90px;
+	line-height: 90px;
+}
+
+#ProductsList .ProductRow div {
+	height: 90px;
+	line-height: 90px;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+#ProductsList .PNumber {
+	float: left;
+	display: inline;
+	width: 175px;
+}
+
+#ProductsList .PName {
+	float: left;
+	display: inline;
+	width: 280px;
+	cursor: pointer;
+}
+
+#ProductsList .PImage {
+	float: left;
+	display: inline;
+	width: 125px;
+}
+
+#ProductsList .PImage img {
+	border: 0;
+	margin: 0;
+}
+
+#ProductsList .PAva {
+	float: left;
+	display: inline;
+	width: 130px;
+}
+#ProductsList .PAva select {
+	width: 125px;
+}
+#ProductsList .PQuan {
+	float: left;
+	display: inline;
+	width: 90px;
+}
+#ProductsList .PQuan input {
+	width: 80px;
+}
+
+
+#ProductsList .PBut {
+	float: left;
+	display: inline;
+	width: 50px;
+	text-align: center;
+}
+
+#ProductsList .PHoverImage {
+	background-color: #666;
+	padding: 5px;
+	border: 2px solid #000;
+	display: none;
+}
+
+
+#ProductsList .ProductRow:hover {
+	background-color: #ddd;
+}

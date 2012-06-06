@@ -1,0 +1,493 @@
+/*
+--------------------------------------------------- z-index map ---------------
+    Background Layers < 100
+    Main Content = 100
+    Sliding Content > 100 < 200
+    Alerts > 200
+--------------------------------------------------- /z-index map --------------
+*/
+
+
+/* --------------------------------------- Main Layout Elements ---------------*/
+
+html {
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #1A2F42;
+    background-image: url(/images/layout/bodyBackground.png);
+    background-repeat: repeat-x;
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 13px;
+    color: #000;
+}
+
+img {
+    border: 0;
+}
+
+a {
+    color: #00c;
+    font-weight: bold;
+    text-decoration: none;
+    height: 22px;
+    line-height: 22px;
+    outline: none;
+}
+
+form {
+    padding: 0;
+    margin: 0;
+}
+
+img, 
+div { 
+    behavior: url(iepngfix.htc);
+}
+
+#imagePreloadDiv {
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+/* ------------------------------------------- Content Elements ---------------*/
+#bodyWrapper {
+    text-align: center;
+}
+
+#contentWrapper {
+    width: 1000px;
+    min-height: 800px;
+    border: 0;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+    background-color: #fff;
+    margin: 0 auto 0 auto;
+    text-align: left;
+}
+
+#contentBackground1 {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    background-image: url(/images/layout/contentBackground1.jpg);
+    background-repeat: no-repeat;
+    width: 1000px;
+    height: 800px;
+    z-index: 20;
+    opacity: 0;
+}
+
+#contentBackground2 {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    /*width: 1000px;*/
+    /*height: 800px;*/
+    z-index: 10;
+    display: block;
+    background-color: transparent;
+    opacity: 1;
+    display: none;
+}
+
+#contentCanister {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    width: 1000px;
+    z-index: 100;
+}
+
+/* ------------------------------------------ /Content Elements ---------------*/
+
+/* -------------------------------------------- Header Elements ---------------*/
+#header {
+    width: 978px;
+    height: 199px;
+    margin: 0 0 10px 10px;
+    border: 1px solid #000;
+    border-top: 0;
+    background-image: url(/images/layout/headerBackground.png);
+    display: block;
+}
+#logo {
+    width: 310px;
+    height: 199px;
+    margin: 0;
+    border: 0;
+    background-image: url(/images/layout/logo.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    float: left;
+    display: inline-block;
+}
+#doterraLogo {
+    width: 425px;
+    height: 169px;
+    margin: 0;
+    border: 0;
+    background-image: url(/images/layout/doterraIPCLogo.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    float: right;
+    display: inline-block;
+}
+#headerMenu {
+    width: 450px;
+    height: 30px;
+    margin: 0 10px 0 0;
+    float: right;
+    display: inline-block;
+    z-index: 150;
+}
+#emailAddress {
+    width: 200px;
+    margin: 5px 0 5px 0;
+    border: 2px solid #ccc;
+}
+#mailingList {
+    float: right;
+}
+.logoFade {
+    opacity: 0;
+}
+/* ------------------------------------------- /Header Elements ---------------*/
+
+/* ------------------------------------- General Panel Classes ----------------*/
+.panelWrapper {
+    width: 320px;
+    height: 565px;
+    float: left;
+    overflow: hidden;
+    display: inline-block;
+    position: absolute;
+}
+.panelHeader {
+    height: 28px;
+    text-align: center;
+}
+.panelHeaderText {
+    margin: 6px auto 0 auto;
+    height: 25px;
+    z-index: 166;
+    background-repeat: no-repeat;
+    background-position: center center;
+    filter: inherit;
+}
+
+.panelContentWrapper {
+    height: 524px;
+    padding: 0;
+    margin: 0;
+    z-index: 160;
+    background-image: url(/images/layout/contentPanelBackground.png);
+}
+.panelContent {
+    padding: 10px;
+    height: 504px;
+    overflow: hidden;
+    z-index: 170;
+
+}
+
+.panelSlider {
+    width: 28px;
+    height: 553px;
+    display: inline-block;
+    position: absolute;
+    z-index: 150;
+    display: none;
+}
+
+.panelSliderText {
+    width: 28px;
+    margin: 20px 0 0 0;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+.panelMaxLeftSmall {
+    width: 250px;
+    float: left;
+    display: inline-block;
+    margin: 0;
+}
+.panelMaxRightSmall {
+    width: 250px;
+    float: right;
+    display: inline-block;
+    margin: 0;
+}
+.panelMaxMain {
+    float: left;
+    display: inline-block;
+    max-width: 600px;
+}
+.sectionDate {
+    font-weight: bold;
+}
+/* ------------------------------------ /General Panel Classes ----------------*/
+
+/* ------------------------------------------------- Zumba --------------------*/
+#zumbaWrapper {
+    margin: 0 0 0 10px;
+}
+#zumbaCanister {
+    display: none;
+}
+#zumbaSlider {
+    background-image: url(/images/layout/zumbaHeaderBackground.png);
+    border: 1px solid #CD151B;
+}
+#zubmaSliderBackground {
+    background-color: #F97784;
+}
+#zumbaSliderTextLeft {
+    height: 120px;
+    background-image: url(/images/layout/text/zumbaSoulLeft.png);
+}
+#zumbaHeader {
+    background-image: url(/images/layout/zumbaHeaderBackground.png);
+    border: 1px solid #CD151B;
+}
+#zumbaHeaderText {
+    background-image: url(/images/layout/text/zumbaSoul.png);
+}
+#zumbaContentWrapper {
+    border: 1px solid #CD151B;
+    border-top: 0;
+}
+#zumbaContent {
+    overflow: hidden;
+}
+#zumbaCanister .sectionCanister {
+    border-bottom: 1px solid #CD151B !important;
+}
+#zumbaCanister .sectionTitle {
+    border-bottom: 1px solid #CD151B !important;
+}
+/*#zumbaLogoArea{*/
+    /*min-height: 140px;*/
+    /*background-image: url(/images/zumbaLogo.png);*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: bottom right;*/
+/*}*/
+.zumbaLogo {
+    width: 112px;
+    height: 120px;
+    display: inline-block;
+    margin: 5px 0 5px 0;
+}
+/* ------------------------------------------------- /Zumba -------------------*/
+
+/* ------------------------------------------------- Yoga ---------------------*/
+#yogaWrapper {
+    margin: 0 0 0 340px;
+}
+#yogaCanister {
+    display: none;
+}
+#yogaSlider {
+    background-image: url(/images/layout/yogaHeaderBackground.png);
+    border: 1px solid #16871F;
+}
+#yogaSliderTextRight {
+    height: 104px;
+    background-image: url(/images/layout/text/yogaSpiritRight.png);
+}
+#yogaSliderTextLeft {
+    height: 104px;
+    background-image: url(/images/layout/text/yogaSpiritLeft.png);
+}
+#yogaHeader {
+    background-image: url(/images/layout/yogaHeaderBackground.png);
+    border: 1px solid #16871F;
+}
+#yogaHeaderBackground {
+    background-color: #88EC79;
+}
+#yogaHeaderText {
+    background-image: url(/images/layout/text/yogaSpirit.png);
+}
+#yogaContentWrapper {
+    border: 1px solid #16871F;
+    border-top: 0;
+}
+#yogaContent {
+
+}
+#yogaCanister .sectionCanister {
+    border-bottom: 1px solid #16871F !important;
+}
+#yogaCanister .sectionTitle {
+    border-bottom: 1px solid #16871F !important;
+}
+
+/* ------------------------------------------------- /Yoga --------------------*/
+
+/* ------------------------------------------------- DoTerra ------------------*/
+#doTerraWrapper {
+    margin: 0 0 0 670px;
+}
+#doTerraCanister {
+    display: none;
+}
+#doTerraSlider {
+    background-image: url(/images/layout/doTerraHeaderBackground.png);
+    border: 1px solid #0606AC;
+}
+#doTerraSliderBackground {
+    background-color: #6CA3FD;
+}
+#doTerraSliderTextRight {
+    height: 197px;
+    background-image: url(/images/layout/text/doTerraEssentialsRight.png);
+}
+#doTerraHeader {
+    background-image: url(/images/layout/doTerraHeaderBackground.png);
+    border: 1px solid #0606AC;
+}
+#doTerraHeaderText {
+    background-image: url(/images/layout/text/doTerraEssentials.png);
+}
+#doTerraContentWrapper {
+    border: 1px solid #0606AC;
+    border-top: 0;
+}
+#doTerraContent {
+
+}
+#doTerraCanister .sectionCanister {
+    border-bottom: 1px solid #0606AC !important;
+}
+#doTerraCanister .sectionTitle {
+    border-bottom: 1px solid #0606AC !important;
+}
+
+
+/* ------------------------------------------------- /DoTerra -----------------*/
+
+
+/* ------------------------------------------------- Footer -------------------*/
+#footer {
+    position: absolute;
+    width: 978px;
+    height: 24px;
+    margin: 565px 0 0 10px;
+    border: 1px solid #000;
+    border-bottom: 0;
+    background-image: url(/images/layout/headerBackground.png);
+    color: #000;
+}
+#copyright {
+    float: right;
+    text-align: right;
+    margin: 0 10px 0 0;
+    height: 24px;
+    line-height: 24px;
+}
+#credits {
+    float: left;
+    margin: 0 0 0 10px;
+    height: 24px;
+    line-height: 24px;
+}
+#credits a {
+    color: #000;
+    text-decoration: none;
+}
+#credits a:hover {
+    text-decoration: underline
+}
+/* ------------------------------------------------- /Footer ------------------*/
+
+
+
+/* ------------------------------------------ Reusable Elements ---------------*/
+
+
+.offsiteLink {
+    color: #00c;
+    font-weight: bold;
+    text-decoration: none;
+    height: 22px;
+    line-height: 22px;
+}
+.offsiteLink:hover {
+    text-decoration: underline;
+}
+.clear {
+    clear: both;
+}
+.floatLeft {
+    float: left;
+    display: inline-block;
+}
+.floatRight {
+    float: right;
+    display: inline-block;
+}
+.clickable {
+    cursor: pointer;
+}
+.defaultCursor {
+    cursor: default !important;
+}
+.center {
+    text-align: center !important;
+}
+.bold {
+    font-weight: bold;
+}
+.nonBold {
+    font-weight: normal !important;
+}
+.hide {
+    display: none;
+}
+.show {
+    display: block !important;
+}
+.centerOuter {
+    text-align: center;
+}
+.centerInner {
+    text-align: left;
+    margin: auto;
+    display: inline-block;
+}
+.sectionCanister {
+    padding: 0 0 10px 0;
+    margin: 0 0 20px 0;
+    border: 0;
+}
+.sectionTitle {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    border: 0;
+    padding: 0 0 3px 0;
+    margin: 0 0 5px 0;
+}
+.sectionBody {
+    padding: 0 10px 0 10px;
+}
+.indent {
+    padding: 0 0 0 15px;
+}
+.spacer {
+    height: 10px;
+    margin: 0;
+    padding: 0;
+}
+.scrollable {
+    overflow-y: scroll !important;
+}
+
+/* ------------------------------------------ Reusable Elements ---------------*/

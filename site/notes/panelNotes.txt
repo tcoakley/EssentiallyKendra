@@ -1,0 +1,39 @@
+panelClass
+==========
+
+variables
+---------
+name/id
+currentSpecs {
+	state
+	width
+	leftMargin
+	contentUrl
+	position
+}
+specifications {
+    panelSizes {
+    	{
+			leftMargin
+			width
+			contentUrl
+		}
+    	
+    }
+    slider {
+    	left {
+    		leftMargin
+    	}
+    	right {
+    		leftMargin
+    	}
+    }
+}
+
+
+functions
+---------
+
+transition(to, options[delay = 0, duration = 500, callback]
+getSpecs() returns currentSpecs
+destroy()

@@ -1,0 +1,89 @@
+.scrollbar {
+	width: 15px;
+	float: right;
+}
+.knob {
+	cursor: default;
+}
+.vertical .knobTop {
+	width: 15px;
+	height: 4px;
+	font-size: 0;
+	background: url(verticalKnobTop.png) no-repeat top left;
+}
+.vertical .knobMiddle {
+	width: 15px;
+	font-size: 0;
+	background: url(verticalKnobMiddle.gif) repeat-y top left;
+}
+.vertical .knobBottom {
+	width: 15px;
+	height: 4px;
+	font-size: 0;
+	background: url(verticalKnobBottom.png) no-repeat top left;
+}
+
+.horizontal .knobTop {
+	height: 15px;
+	width: 4px;
+	background: url(horizontalKnobTop.png) no-repeat top left;
+	float: left;
+	font-size: 0;
+}
+.horizontal .knobMiddle {
+	height: 15px;
+	font-size: 0;
+	background: url(horizontalKnobMiddle.gif) repeat-X top left;
+	float: left;
+}
+.horizontal .knobBottom {
+	height: 15px;
+	font-size: 0;
+	width: 4px;
+	background: url(horizontalKnobBottom.png) no-repeat top left;
+	float: left;
+}
+.vertical .track {
+	background: url(verticalTrackMiddle.gif) repeat-y top left;
+}
+
+.horizontal .track {
+	float: left;
+	background: url(horizontalTrackMiddle.gif) repeat-x top left;
+}
+.horizontal .scrollbarUp, .horizontal .scrollbarDown {
+	display: block;
+	width: 15px;
+	height: 15px;
+	background: url(horizontalArrowTop.png) no-repeat top right;
+	cursor: pointer;
+	float: left;
+}
+.horizontal .scrollbarDown {
+	background: url(horizontalArrowBottom.png) no-repeat top left;
+	float: right;
+}
+.vertical .scrollbarUp, .vertical .scrollbarDown {
+	display: block;
+	width: 15px;
+	height: 15px;
+	background: url(verticalArrowTop.png) no-repeat top left;
+	cursor: pointer;
+}
+.vertical .scrollbarDown, .vertical .scrollbarDown:link {
+	background: url(verticalArrowBottom.png) no-repeat top left;
+}
+.vertical .scrollbarDown:hover {
+	background-position: center left;
+}
+.vertical .scrollbarDown:active {
+	background-position: bottom left;
+}
+#scrollElementContainer {
+	height: 200px;
+	width: 300px;
+	overflow: hidden;
+}
+#scrollElementContainer .scrollContent {
+	width: 285px;
+}

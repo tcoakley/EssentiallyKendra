@@ -1,0 +1,56 @@
+#PageDisplay {
+	padding: 0 4px 0 4px;
+	display: block;
+}
+
+#PageDisplay ul {
+	padding: 0;
+	margin: 0;
+	font-weight: bold;
+	list-style-type: none;
+	overflow: hidden;
+}
+
+#PageDisplay li {
+	float: left;
+	display: inline;
+	margin: 0;
+	color: #999;
+	height: 22px;
+	line-height: 22px;
+	margin: 0 10px 0 0;
+}
+
+#PageDisplay li a {
+	text-align: center;
+	color: #FF1700;
+	text-decoration: none;
+}
+
+#PageDisplay li a:hover{
+	text-decoration: underline
+}
+
+#PageDisplay li.active {
+	float: left;
+	display: block;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	color: #999;
+	margin: 0 10px 0 0;
+	text-decoration: none;
+}
+
+#PageDisplay li.Filters {
+	float: right;
+	display: block;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	color: #FF1700;
+	margin: 0 10px 0 0;
+	text-decoration: none;
+	cursor: pointer;
+}
+

@@ -1,0 +1,29 @@
+#IncomingMessage {
+	background-color: #007f00;
+	color:#ffffff;
+	font-size:14px;
+	padding:10px;
+	font-weight: bold;
+	border: 2px solid #000000;
+	margin: 10px 0 10px 0;
+}
+
+#ErrorMessage {
+	background-color: #850c00;
+	color:#ffffff;
+	font-size:14px;
+	padding:10px;
+	font-weight: bold;
+	border: 2px solid #000000;
+	margin: 10px 0 10px 0;
+}
+
+#PendingMessage {
+	background-color: #bb9900;
+	color:#ffffff;
+	font-size:14px;
+	padding:10px;
+	font-weight: bold;
+	border: 2px solid #000000;
+	margin: 10px 0 10px 0;
+}

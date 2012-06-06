@@ -1,0 +1,18 @@
+.tip {
+	color: #fff;
+	width: 180px;
+	z-index: 13000;
+	border: 0 none;
+	background: #333;
+}
+.tip-title {
+	font-weight: bold;
+	font-size: 11px;
+	margin: 0;
+	color: #FB7900;
+	padding: 3px 3px 3px 3px;
+}
+.tip-text {
+	font-size: 11px;
+	padding: 4px 4px 4px 4px;
+}

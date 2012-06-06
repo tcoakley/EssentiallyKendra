@@ -1,0 +1,216 @@
+Array
+(
+    [time] => Tue, 02 Jun 2009 13:55:06 -0400
+    [addr] => ******ost
+    [agent] => Shockwave Flash
+    [post] => Array
+        (
+            [Filename] => 08d8ade00948d8ac.jpg
+            [AutoCrop] => 0
+            [MediaID] => 3
+            [Upload] => Submit Query
+        )
+
+    [files] => Array
+        (
+            [Filedata] => Array
+                (
+                    [name] => 08d8ade00948d8ac.jpg
+                    [type] => application/octet-stream
+                    [tmp_name] => C:\WINDOWS\Temp\phpE9.tmp
+                    [error] => 0
+                    [size] => 353527
+                )
+
+        )
+
+)
+
+
+: #######################
+FileName: 08d8ade00948d8ac.jpg
+AutoCrop: 0
+MediaID: 3
+TempName: C:\WINDOWS\Temp\phpE9.tmp
+#######################
+---
+Array
+(
+    [time] => Tue, 02 Jun 2009 13:55:06 -0400
+    [addr] => ******ost
+    [agent] => Shockwave Flash
+    [post] => Array
+        (
+            [Filename] => 3cc5794386a3aa28.jpg
+            [AutoCrop] => 0
+            [MediaID] => 3
+            [Upload] => Submit Query
+        )
+
+    [files] => Array
+        (
+            [Filedata] => Array
+                (
+                    [name] => 3cc5794386a3aa28.jpg
+                    [type] => application/octet-stream
+                    [tmp_name] => C:\WINDOWS\Temp\phpEA.tmp
+                    [error] => 0
+                    [size] => 244674
+                )
+
+        )
+
+)
+
+
+: #######################
+FileName: 3cc5794386a3aa28.jpg
+AutoCrop: 0
+MediaID: 3
+TempName: C:\WINDOWS\Temp\phpEA.tmp
+#######################
+---
+Array
+(
+    [time] => Tue, 02 Jun 2009 13:55:06 -0400
+    [addr] => ******ost
+    [agent] => Shockwave Flash
+    [post] => Array
+        (
+            [Filename] => 5e9dc7276806ccf3.jpg
+            [AutoCrop] => 0
+            [MediaID] => 3
+            [Upload] => Submit Query
+        )
+
+    [files] => Array
+        (
+            [Filedata] => Array
+                (
+                    [name] => 5e9dc7276806ccf3.jpg
+                    [type] => application/octet-stream
+                    [tmp_name] => C:\WINDOWS\Temp\phpEB.tmp
+                    [error] => 0
+                    [size] => 449472
+                )
+
+        )
+
+)
+
+
+: #######################
+FileName: 5e9dc7276806ccf3.jpg
+AutoCrop: 0
+MediaID: 3
+TempName: C:\WINDOWS\Temp\phpEB.tmp
+#######################
+---
+Array
+(
+    [time] => Tue, 02 Jun 2009 13:55:25 -0400
+    [addr] => ******ost
+    [agent] => Shockwave Flash
+    [post] => Array
+        (
+            [Filename] => 2008_Calendar_by_CrisVector.jpg
+            [AutoCrop] => true
+            [MediaID] => 3
+            [Upload] => Submit Query
+        )
+
+    [files] => Array
+        (
+            [Filedata] => Array
+                (
+                    [name] => 2008_Calendar_by_CrisVector.jpg
+                    [type] => application/octet-stream
+                    [tmp_name] => C:\WINDOWS\Temp\phpEC.tmp
+                    [error] => 0
+                    [size] => 145864
+                )
+
+        )
+
+)
+
+
+: #######################
+FileName: 2008_Calendar_by_CrisVector.jpg
+AutoCrop: true
+MediaID: 3
+TempName: C:\WINDOWS\Temp\phpEC.tmp
+#######################
+---
+Array
+(
+    [time] => Tue, 02 Jun 2009 14:03:59 -0400
+    [addr] => ******ost
+    [agent] => Shockwave Flash
+    [post] => Array
+        (
+            [Filename] => __Ellaiyria____by_night_fate.jpg
+            [AutoCrop] => 0
+            [MediaID] => 3
+            [Upload] => Submit Query
+        )
+
+    [files] => Array
+        (
+            [Filedata] => Array
+                (
+                    [name] => __Ellaiyria____by_night_fate.jpg
+                    [type] => application/octet-stream
+                    [tmp_name] => C:\WINDOWS\Temp\phpF0.tmp
+                    [error] => 0
+                    [size] => 73966
+                )
+
+        )
+
+)
+
+
+: #######################
+FileName: __Ellaiyria____by_night_fate.jpg
+AutoCrop: 0
+MediaID: 3
+TempName: C:\WINDOWS\Temp\phpF0.tmp
+#######################
+---
+Array
+(
+    [time] => Tue, 02 Jun 2009 14:05:56 -0400
+    [addr] => ******ost
+    [agent] => Shockwave Flash
+    [post] => Array
+        (
+            [Filename] => __Ellaiyria____by_night_fate.jpg
+            [AutoCrop] => 0
+            [MediaID] => 3
+            [Upload] => Submit Query
+        )
+
+    [files] => Array
+        (
+            [Filedata] => Array
+                (
+                    [name] => __Ellaiyria____by_night_fate.jpg
+                    [type] => application/octet-stream
+                    [tmp_name] => C:\WINDOWS\Temp\phpF2.tmp
+                    [error] => 0
+                    [size] => 73966
+                )
+
+        )
+
+)
+
+
+: #######################
+FileName: __Ellaiyria____by_night_fate.jpg
+AutoCrop: 0
+MediaID: 3
+TempName: C:\WINDOWS\Temp\phpF2.tmp
+#######################
+---

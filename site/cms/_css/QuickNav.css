@@ -1,0 +1,45 @@
+#QuickNav {
+	padding: 0;
+	margin: 2px 30px 10px 30px;
+	display: block;
+}
+
+#QuickNav ul {
+	padding: 0;
+	margin: 0;
+	font-weight: bold;
+	list-style-type: none;
+	overflow: hidden;
+}
+
+#QuickNav li {
+	display: inline;
+	margin: 0;
+}
+
+#QuickNav li a {
+	float: right;
+	display: block;
+	height: 22px;
+	line-height: 22px;
+	text-align: center;
+	margin: 0 0 0 10px;
+	padding: 1px 4px 1px 4px;
+	text-decoration: none;
+	background-color: #000;
+	color: #eee;
+	border-top: 2px solid #666;
+	border-left: 2px solid #666;
+	border-right: 2px solid #000;
+	border-bottom: 2px solid #000;
+}
+
+#QuickNav li a:hover{
+	cursor: pointer;
+	padding: 0px 5px 2px 3px;
+	border-top: 2px solid #000;
+	border-left: 2px solid #000;
+	border-right: 2px solid #666;
+	border-bottom: 2px solid #666;
+}
+

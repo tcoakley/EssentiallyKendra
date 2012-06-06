@@ -1,0 +1,119 @@
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+WARNING: if padding, margin or border dimensions change the code 
+		must also be changed. Please notify tcoakley
+		about any needed changes.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+#HistoryTable {
+	border: 0;
+}
+
+
+#HistoryTable a {
+	color: #222;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#HistoryTable a:hover {
+	text-decoration: underline;
+}
+
+#HistoryTable img {
+	border: 0;
+}
+
+#HistoryTable #thead div {
+	background: #222;
+	padding: 3px 6px 3px 6px;
+	float: left;
+	display: inline-block;
+	border: 1px solid #222;
+}
+
+#HistoryTable #thead a {
+	color: #eee;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#HistoryTable #tbody div {
+
+}
+
+#HistoryTable #thead a:hover {
+	text-decoration: underline;
+}
+
+#HistoryTable #tbody div.odd div {
+	background: #e5e5e5;
+	padding: 3px 6px 3px 6px;
+	float: left;
+	display: inline-block;
+	border: 1px solid #fff;
+}
+
+#HistoryTable #tbody div.even div {
+	background: #d5d5d5;
+	padding: 3px 6px 3px 6px;
+	float: left;
+	display: inline-block;
+	border: 1px solid #fff;
+}	
+
+#HistoryTable #tbody div.even:hover div {
+	background: #333;
+	color: #eee;
+}
+#HistoryTable #tbody div.even:hover div a {
+	color: #eee;
+}
+#HistoryTable #tbody div.odd:hover div {
+	background: #333;
+	color: #eee;
+}
+
+#HistoryTable #tbody div.odd:hover div a {
+	color: #eee;
+}
+
+#HistoryTable #tbody .details {
+	display: none;
+	padding: 0;
+	margin: 0 20px 0 20px;
+}
+
+#HistoryTable #tbody .details .head {
+	background: #D3DCE3;
+	padding: 3px 6px 3px 6px;
+	float: left;
+	display: inline-block;
+	border: 1px solid #fff;
+}
+
+#HistoryTable #tbody .details div.odd div {
+	background: #e5e5e5;
+	padding: 3px 6px 3px 6px;
+	float: left;
+	display: inline-block;
+	border: 1px solid #fff;
+}
+
+#HistoryTable #tbody .details div.even div {
+	background: #d5d5d5;
+	padding: 3px 6px 3px 6px;
+	float: left;
+	display: inline-block;
+	border: 1px solid #fff;
+}
+
+#HistoryTable #tbody .details div.odd:hover div {
+	background: #CCFFCC;
+}
+
+#HistoryTable #tbody .details div.even:hover div {
+	background: #CCFFCC;
+}
+
