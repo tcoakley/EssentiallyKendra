@@ -54,6 +54,27 @@ var panel = new Class({
         }
         options.duration = parseInt(options.duration);
     },
+    show: function(delay) {
+        (function(){
+            this.fireEvent('started');
+
+            var targetPanel = $(this.options.name);
+            targetPanel.setStyle('opacity', 0);
+            targetPanel.setStyle('display', 'block');
+            var spTween = new Fx.Tween(targetPanel, {
+                duration: 900,
+                transition: Fx.Transitions.Quart.easeInOut,
+                property: 'opacity'
+            });
+            spTween.addEvent('complete', function() {
+                this.fireEvent('complete');
+            }.bind(this));
+            spTween.start(0,1);
+
+        }).delay(delay, this);
+
+    },
+
     activateLinks: function() {
         options.clickable = true;
     }
@@ -93,7 +114,7 @@ var zumbaPanel = new Class({
 var yogaPanel = new Class({
     Extends: panel,
     options: {
-        name: 'yoga',
+        name: 'yogaCanister',
         panelSizes: {
             standard: {
                 leftMargin: 340,

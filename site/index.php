@@ -18,7 +18,7 @@
     <script type="text/javascript" src="/js/mootools-core-1.4.5-full-compat-yc.js"></script>
     <script type="text/javascript" src="/js/mootools-more-1.4.0.1.js"></script>
     <script type="text/javascript" src="/js/panels.js"></script>
-    <script type="text/javascript" src="/js/layout2.js"></script>
+    <script type="text/javascript" src="/js/layout.js"></script>
 
     <!-- /js -->
 </head>
@@ -52,7 +52,7 @@
 
                     <div class="clear"></div>
                     <!-- footer -->
-                    <div id="footer">t
+                    <div id="footer">
                         <div id="copyright">Copyright &copy; 2012 all rights reserved.</div>
                         <div id="credits"><a href="http://www.essentiallytom.com">Website by Tom</a></div>
                     </div>

@@ -28,14 +28,62 @@
         window.addEvent('load', function() {
             var myYogaPanel = new yogaPanel();
 
-            myYogaPanel.addEvent('complete', function() {
+            myYogaPanel.addEvent('started', function() {
                 console.log('damn I am good');
             });
+            myYogaPanel.addEvent('complete', function() {
+                console.log('I am a pony');
+            });
 
-            myYogaPanel.transition('slider', {delay: 2000});
+//            myYogaPanel.transition('slider', {delay: 2000});
+            myYogaPanel.show( 2);
         });
     </script>
 
+    <div id='bodyWrapper'>
+        <!-- contentWrapper -->
+        <div id='contentWrapper'>
+            <!-- Backgrounds -->
+            <div id="contentBackground1"></div>
+            <div id="contentBackground2"></div>
+
+            <!-- /Backgrounds -->
+
+            <!-- contentCanister -->
+            <div id="contentCanister">
+                <!-- Header -->
+                <div id="header">
+                    <div id="doterraLogo" class="logoFade"></div>
+                    <div id="logo" class="logoFade"></div>
+                </div>
+                <!-- /Header -->
+
+                <!-- Content -->
+                <div id="content">
+
+                    <?php require_once('includes/zumba/zumbaLayout.php'); ?>
+
+                    <?php require_once('includes/yoga/yogaLayout.php'); ?>
+
+                    <?php require_once('includes/doTerra/doTerraLayout.php'); ?>
+
+                    <div class="clear"></div>
+                    <!-- footer -->
+                    <div id="footer">
+                        <div id="copyright">Copyright &copy; 2012 all rights reserved.</div>
+                        <div id="credits"><a href="http://www.essentiallytom.com">Website by Tom</a></div>
+                    </div>
+                    <!-- /footer -->
+                </div>
+                <!-- /Content -->
+                <div class="clear"></div>
+
+            </div>
+            <!-- /contentCanister -->
+        </div>
+        <!-- /contentWrapper -->
+    </div>
+    <!-- /bodyWrapper -->
 
 </body>
 </html>
