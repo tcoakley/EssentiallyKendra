@@ -16,7 +16,7 @@ window.addEvent('domready', function() {
                 }
             }
         });
-        var myMessage = new Message({
+        new Message({
             icon: "questionMedium.png",
             iconPath: "/images/",
             width: 300,

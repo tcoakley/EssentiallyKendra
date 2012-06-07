@@ -27,16 +27,65 @@
 
         window.addEvent('load', function() {
             var myYogaPanel = new yogaPanel();
-
             myYogaPanel.addEvent('started', function() {
                 console.log('damn I am good');
             });
             myYogaPanel.addEvent('complete', function() {
-                console.log('I am a pony');
+                this.transition('max');
             });
 
 //            myYogaPanel.transition('slider', {delay: 2000});
-            myYogaPanel.show( 2);
+
+            myYogaPanel.show();
+
+
+//             =======================================================================================================
+            // Handle loading of the full color background
+            // Must load from a different domain for it to work correctly in firefox. *boggle*
+            var preventCache = Number.random(1,100000);
+            var colorBackground = new Asset.image('/images/layout/contentBackground2.jpg?' + preventCache, {
+                id: 'contentBackground2Image',
+                onLoad: backgroundLoadComplete
+            });
+
+            function backgroundLoadComplete() {
+                colorBackground.inject($('contentBackground2'));
+                checkBackgroundLoad();
+            }
+
+            function checkBackgroundLoad() {
+                if ($('contentBackground2').getSize().y > 790) {
+                    backgroundLoaded = true;
+                    if (animationComplete) {
+                        displayColorBackground();
+                    }
+                } else {
+                    (function(){
+                        checkBackgroundLoad();
+                    }).delay(750, this);
+                }
+            }
+
+            function displayColorBackground() {
+                backgroundShown = true;
+                $('contentBackground1').set('morph', {duration: 1000, transition: Fx.Transitions.Quart.easeInOut});
+                $('contentBackground1').morph({opacity: [0]});
+            }
+
+            // Handle initial load animations
+            var contentBackground1Morph = new Fx.Morph('contentBackground1', {
+                duration: 400,
+                transition: Fx.Transitions.Sine.easeOut
+            });
+            contentBackground1Morph.addEvent('complete', function() {
+                animationComplete = true;
+                $('contentBackground2').setStyle('display', 'block');
+                displayColorBackground();
+            });
+            contentBackground1Morph.start({'opacity': 1});
+
+
+
         });
     </script>
 
@@ -65,7 +114,7 @@
 
                     <?php require_once('includes/yoga/yogaLayout.php'); ?>
 
-                    <?php require_once('includes/doTerra/doTerraLayout.php'); ?>
+<!--                    --><?php //require_once('includes/doTerra/doTerraLayout.php'); ?>
 
                     <div class="clear"></div>
                     <!-- footer -->
@@ -84,6 +133,7 @@
         <!-- /contentWrapper -->
     </div>
     <!-- /bodyWrapper -->
+
 
 </body>
 </html>

@@ -12,7 +12,7 @@ var panel = new Class({
         name: null,
         clickable: false,
         currentSpecs: {
-            state: null,
+            currentState: null,
             width: null,
             leftMargin: null,
             contentUrl: null,
@@ -23,17 +23,27 @@ var panel = new Class({
     },
     initialize: function(options){
         this.setOptions(options);
+        this.setCurrentSpecs(Object.merge(this.options.panelSizes['standard'],{'currentState': 'standard'}));
+        console.log(this.options);
+    },
+    setCurrentSpecs: function(specs) {
+        this.options.currentSpecs = Object.merge(this.options.currentSpecs, specs);
     },
     addSize: function(name, specs) {
         this.options.panelSizes[name] = specs;
     },
     transition: function(targetSize,options) {
-        //fade content
-
+        // init
         if (options == undefined) {
             options = new Object();
         }
         this.primeOptions(options);
+
+        if (this.options.currentSpecs.currentState != 'slider') {
+            //fade content
+            this.fadeContent('out');
+        }
+
 
         // create morphs and completions
 
@@ -44,8 +54,8 @@ var panel = new Class({
         }).delay(options.delay, this);
     },
     primeOptions: function(options){
-
         if (options.delay == undefined) {
+            options = new Object();
             options.delay = 0;
         }
         options.delay = parseInt(options.delay);
@@ -54,15 +64,19 @@ var panel = new Class({
         }
         options.duration = parseInt(options.duration);
     },
-    show: function(delay) {
+    show: function(options) {
+        if (options == undefined) {
+            options = new Object();
+            this.primeOptions(options);
+            options = Object.merge(options, {'delay' : 1, 'duration' : 900});
+        }
         (function(){
             this.fireEvent('started');
-
-            var targetPanel = $(this.options.name);
+            var targetPanel = $(this.options.name + 'Canister');
             targetPanel.setStyle('opacity', 0);
             targetPanel.setStyle('display', 'block');
             var spTween = new Fx.Tween(targetPanel, {
-                duration: 900,
+                duration: options.duration,
                 transition: Fx.Transitions.Quart.easeInOut,
                 property: 'opacity'
             });
@@ -71,15 +85,38 @@ var panel = new Class({
             }.bind(this));
             spTween.start(0,1);
 
-        }).delay(delay, this);
+        }).delay(options.delay, this);
 
     },
+    fadeContent: function(direction, loadContent) {
 
+        var fadeTween = new Fx.Tween(this.options.name + 'Content', {
+            duration: 300,
+            transition: Fx.Transitions.Quart.easeInOut,
+            property: 'opacity'
+        });
+        if (loadContent !== undefined) {
+            fadeTween.addEvent('complete', function() {
+                $(this.options.name + 'Content').empty();
+                $(this.options.nam + 'Content').load(loadContent);
+            }.bind(this));
+        }
+        if (direction != 'in') {
+            fadeTween.start(1,0);
+        } else {
+            fadeTween.start(0,1);
+        }
+    },
     activateLinks: function() {
         options.clickable = true;
     }
 });
 
+/* ====================================================================================== */
+/* ====================================================================================== */
+/* ====================================================================================== */
+/* ====================================================================================== */
+/* ====================================================================================== */
 
 var zumbaPanel = new Class({
     Extends: panel,
@@ -108,13 +145,14 @@ var zumbaPanel = new Class({
     },
     initialize: function(options) {
         this.parent(options);
+
     }
 });
 
 var yogaPanel = new Class({
     Extends: panel,
     options: {
-        name: 'yogaCanister',
+        name: 'yoga',
         panelSizes: {
             standard: {
                 leftMargin: 340,
