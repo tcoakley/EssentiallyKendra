@@ -27,10 +27,10 @@
 
         window.addEvent('load', function() {
             var myYogaPanel = new yogaPanel();
-            myYogaPanel.addEvent('started', function() {
-                console.log('damn I am good');
+            myYogaPanel.addEvent('showStarted', function() {
+                console.log('Transition started');
             });
-            myYogaPanel.addEvent('complete', function() {
+            myYogaPanel.addEvent('showComplete', function() {
                 this.transition('max');
             });
 
