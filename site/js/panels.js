@@ -40,46 +40,99 @@ var panel = new Class({
 
         var currentSpecs = this.options.currentSpecs;
         var currentState = currentSpecs.currentState;
-        var panelSizes = this.options.panelSizes[targetSize];
-        if (currentState != 'slider') {
-
-            if (targetSize == 'slider') {
-                //fade content
-                this.fadeContent('out');
-
-            } else {
-                //fade content
-                this.fadeContent('out', panelSizes.contentUrl);
-                var panelMorph = new Fx.Morph($(this.options.name + "Wrapper"), {
-                    duration: options.duration,
-                    transition: Fx.Transitions.Quart.easeInOut
-                });
-                panelMorph.addEvent('complete', function(el) {
-                    this.activateLinks();
-                    this.options.currentSpecs = Object.merge(panelSizes,{'currentState': targetSize});
-                    this.fadeContent('in');
-                }.bind(this));
-                (function(){
-                    this.fireEvent('transitionStarted');
-                    console.log(panelSizes);
-                    panelMorph.start({
-                        'width': panelSizes.width,
-                        'margin-left': panelSizes.leftMargin
-                    });
-                }).delay(options.delay, this);
-            }
-        } else {
-
-        }
-
-
-        // create morphs and completions
 
         // delay start
         (function(){
             // transition
             this.fireEvent('started');
+
+            if (currentState != 'slider') {
+
+                if (targetSize == 'slider') {
+                    this.fadeContent('out');
+                    this.panelToSlide(options.direction);
+
+                } else {
+                    var panelSizes = this.options.panelSizes[targetSize];
+                    if(options.contentUrl == undefined || options.contentUrl.length < 4) {
+                        options.contentUrl = panelSizes.contentUrl;
+                    }
+                    this.fadeContent('out', options.contentUrl);
+                    var panelMorph = new Fx.Morph($(this.options.name + "Wrapper"), {
+                        duration: options.duration,
+                        transition: Fx.Transitions.Quart.easeInOut
+                    });
+                    panelMorph.addEvent('complete', function(el) {
+                        this.fireEvent('transitionComplete');
+                        this.activateLinks();
+                        this.options.currentSpecs = Object.merge(panelSizes,{'currentState': targetSize});
+                        this.fadeContent('in');
+                    }.bind(this));
+                    (function(){
+                        this.fireEvent('transitionStarted');
+                        console.log(panelSizes);
+                        panelMorph.start({
+                            'width': panelSizes.width,
+                            'margin-left': panelSizes.leftMargin
+                        });
+                    }).delay(options.delay, this);
+                }
+            } else {
+                if (targetSize == 'slider') {
+                    var sliderMorph = new Fx.Morph($(this.options.name + "Slider"), {
+                        duration: 600,
+                        transition: Fx.Transitions.Quart.easeInOut
+                    });
+                    var sliderMargin = this.options.slider[options.direction.toLowerCase()].leftMargin;
+                    console.log(sliderMargin);
+                    sliderMorph.start({'margin-left': sliderMargin});
+                }
+            }
+
         }).delay(options.delay, this);
+    },
+    panelToSlide: function(direction) {
+        var panelMargin = $(this.options.name + 'Wrapper').getCoordinates('content').left;
+        var panelMarginTop = $(this.options.name + 'Wrapper').getCoordinates('content').top;
+        var panelWidth = parseInt($(this.options.name + 'Wrapper').getSize().x);
+        panelMargin += parseInt(panelWidth/2) - 14;
+
+        var sliderText = new Element("div", {
+            "id" : this.options.name + 'SliderText' + direction,
+            "class" : 'panelSliderText'
+        });
+        var slider = new Element("div", {
+            "id" : this.options.name + "Slider",
+            "class" : 'panelSlider',
+            styles: {
+                'margin-left': panelMargin,
+                'margin-top': panelMarginTop
+            }
+        });
+        sliderText.inject(slider);
+        slider.inject('content');
+
+        // show the slide panel
+        $(this.options.name + 'Wrapper').set('morph', {duration: 500, transition: Fx.Transitions.Quart.easeInOut});
+        $(this.options.name + 'Wrapper').morph({
+            opacity: [0],
+            'margin-left': panelMargin,
+            'width': 28
+        });
+        this.primeFade($(this.options.name + "Slider"));
+        var sliderMorph = new Fx.Morph($(this.options.name + "Slider"), {
+            duration: 600,
+            transition: Fx.Transitions.Quart.easeInOut
+        });
+        sliderMorph.start({opacity:[1]}).chain(function(){
+            var sliderMargin = this.options.slider[direction.toLowerCase()].leftMargin;
+            sliderMorph.addEvent('complete', function(el) {
+                this.options.currentSpecs = Object.merge(this.options.currentSpecs,{'currentState': 'slider'});
+                this.fireEvent('transitionComplete');
+
+            }.bind(this));
+            sliderMorph.start({'margin-left': sliderMargin});
+        }.bind(this));
     },
     primeOptions: function(options){
         if (options.delay == undefined) {
@@ -91,6 +144,10 @@ var panel = new Class({
         }
         options.duration = parseInt(options.duration);
     },
+    primeFade: function(element) {
+        element.setStyle('opacity', 0);
+        element.setStyle('display', 'block');
+    },
     show: function(options) {
         if (options == undefined) {
             options = new Object();
@@ -100,8 +157,7 @@ var panel = new Class({
         (function(){
             this.fireEvent('showStarted');
             var targetPanel = $(this.options.name + 'Canister');
-            targetPanel.setStyle('opacity', 0);
-            targetPanel.setStyle('display', 'block');
+            this.primeFade(targetPanel);
             var spTween = new Fx.Tween(targetPanel, {
                 duration: options.duration,
                 transition: Fx.Transitions.Quart.easeInOut,
@@ -134,8 +190,9 @@ var panel = new Class({
         } else {
             console.log(this.options.currentSpecs.currentState);
             if (this.options.currentSpecs.currentState == 'max') {
-                console.log('here');
                 $(this.options.name + "Content").addClass('scrollable');
+            } else {
+                $(this.options.name + "Content").removeClass('scrollable');
             }
             fadeTween.start(0,1);
         }

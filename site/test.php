@@ -18,12 +18,12 @@
     <script type="text/javascript" src="/js/mootools-core-1.4.5-full-compat-yc.js"></script>
     <script type="text/javascript" src="/js/mootools-more-1.4.0.1.js"></script>
     <script type="text/javascript" src="/js/panels.js"></script>
-
-
     <!-- /js -->
+
 </head>
 <body>
     <script type='text/javascript'>
+
 
         window.addEvent('load', function() {
             var myYogaPanel = new yogaPanel();
@@ -31,8 +31,14 @@
                 console.log('Transition started');
             });
             myYogaPanel.addEvent('showComplete', function() {
-                this.transition('max');
+                this.transition('slider', {'direction' : 'Left', 'delay' : 2000});
             });
+            myYogaPanel.addEvent('transitionComplete', secondTransition);
+
+            function secondTransition() {
+                myYogaPanel.transition('slider', {'direction': 'Right','delay' : 500});
+                myYogaPanel.removeEvent('transitionComplete', secondTransition);
+            }
 
 //            myYogaPanel.transition('slider', {delay: 2000});
 
