@@ -32,6 +32,7 @@ var panel = new Class({
         this.options.panelSizes[name] = specs;
     },
     transition: function(targetSize,options) {
+        this.fireEvent('transitionTo' + targetSize);
         // init
         if (options == undefined) {
             options = new Object();
@@ -44,7 +45,7 @@ var panel = new Class({
         // delay start
         (function(){
             // transition
-            this.fireEvent('started');
+            this.fireEvent('transitionTo' + targetSize + 'Started');
 
             if (currentState != 'slider') {
 
@@ -63,7 +64,7 @@ var panel = new Class({
                         transition: Fx.Transitions.Quart.easeInOut
                     });
                     panelMorph.addEvent('complete', function(el) {
-                        this.fireEvent('transitionComplete');
+                        this.fireEvent('transitionTo' + targetSize + 'Complete');
                         this.activateLinks();
                         this.options.currentSpecs = Object.merge(panelSizes,{'currentState': targetSize});
                         this.fadeContent('in');
@@ -83,8 +84,10 @@ var panel = new Class({
                         duration: 600,
                         transition: Fx.Transitions.Quart.easeInOut
                     });
+                    sliderMorph.addEvent('complete', function(el) {
+                        this.fireEvent('transitionTo' + targetSize + 'Complete');
+                    }.bind(this));
                     var sliderMargin = this.options.slider[options.direction.toLowerCase()].leftMargin;
-                    console.log(sliderMargin);
                     sliderMorph.start({'margin-left': sliderMargin});
                 }
             }
@@ -128,7 +131,7 @@ var panel = new Class({
             var sliderMargin = this.options.slider[direction.toLowerCase()].leftMargin;
             sliderMorph.addEvent('complete', function(el) {
                 this.options.currentSpecs = Object.merge(this.options.currentSpecs,{'currentState': 'slider'});
-                this.fireEvent('transitionComplete');
+                this.fireEvent('transitionToSliderComplete');
 
             }.bind(this));
             sliderMorph.start({'margin-left': sliderMargin});

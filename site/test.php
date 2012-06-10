@@ -33,11 +33,11 @@
             myYogaPanel.addEvent('showComplete', function() {
                 this.transition('slider', {'direction' : 'Left', 'delay' : 2000});
             });
-            myYogaPanel.addEvent('transitionComplete', secondTransition);
+            myYogaPanel.addEvent('transitionToSliderComplete', secondTransition);
 
             function secondTransition() {
                 myYogaPanel.transition('slider', {'direction': 'Right','delay' : 500});
-                myYogaPanel.removeEvent('transitionComplete', secondTransition);
+                myYogaPanel.removeEvent('transitionToSliderComplete', secondTransition);
             }
 
 //            myYogaPanel.transition('slider', {delay: 2000});
