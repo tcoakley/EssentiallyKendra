@@ -21,7 +21,7 @@
         <div>Mansfield YMCA</div>
         <div class="indent">
             <div>750 Scholl Road</div>
-            <div>Mansfield, OH 44907</div>
+            <div>Mansfield, OH</div>
 <!--            <div>419.522.3511</div>-->
         </div>
 
@@ -30,7 +30,7 @@
         <div>South Park</div>
         <div class="indent">
             <div>Brinkerhoff Ave</div>
-            <div>Mansfield, OH 44907</div>
+            <div>Mansfield, OH</div>
             <!--            <div>419.522.3511</div>-->
         </div>
         
@@ -53,13 +53,13 @@
 </div>
 <!-- /links -->
 
-<!--<div class='sectionCanister'>-->
-<!--    <div class="sectionTitle">My Credentials</div>-->
-<!--    <div>-->
-<!--        200 RYT YogaFit-Inspired-->
-<!--    </div>-->
+<div class='sectionCanister'>
+    <div class="sectionTitle">My Credentials</div>
+    <div>
+        200 RYT YogaFit-Inspired
+    </div>
 <!--    <br/>-->
 <!--    <div class='center'><img src='/images/om.png' width="120" height="120" /></div>-->
 <!---->
-<!--</div>-->
+</div>
 

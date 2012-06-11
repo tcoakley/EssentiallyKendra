@@ -39,7 +39,7 @@
         <div>Mansfield YMCA</div>
         <div class="indent">
             <div>750 Scholl Road</div>
-            <div>Mansfield, OH 44907</div>
+            <div>Mansfield, OH</div>
 <!--            <div>419.522.3511</div>-->
         </div>
 
@@ -47,8 +47,8 @@
 
         <div>Burton Park</div>
         <div class="indent">
-            <div>Sunset BLVD</div>
-            <div>Mansfield, OH 44907</div>
+            <div>Sunset Blvd</div>
+            <div>Mansfield, OH</div>
             <!--            <div>419.522.3511</div>-->
         </div>
         
@@ -57,15 +57,15 @@
 <!-- /locations -->
 
 <!-- Logo and Links -->
-<!--<div class="sectionCanister" id='zumbaLogoArea'>-->
-<!--    <div class="sectionTitle">Links</div>-->
+<div class="sectionCanister" id='zumbaLogoArea'>
+    <div class="sectionTitle">Links</div>
 <!--    <div class="center">-->
 <!--        <a href="https://www.zumba.com/en-US/profiles/55573/" target="_blank">-->
 <!--            <img src="/images/zumbaLogo.png" class="zumbaLogo" />-->
 <!--        </a>-->
 <!--        <div class='clear'></div>-->
-<!--        <a href="https://www.zumba.com/en-US/profiles/55573/" target="_blank">My Zumba Profile Page</a>-->
+        <a href="https://www.zumba.com/en-US/profiles/55573/" target="_blank">My Zumba Profile Page</a>
 <!--    </div>-->
 <!--    <div class='clear'></div>-->
-<!--</div>-->
+</div>
 <!-- /Logo and Links -->

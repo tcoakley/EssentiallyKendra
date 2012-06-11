@@ -57,7 +57,7 @@
       <file leaf-file-name="yogaContent.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/yoga/yogaContent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="0" selection-start="1501" selection-end="1801" vertical-scroll-proportion="-20.692308">
+            <state line="64" column="0" selection-start="1747" selection-end="1747" vertical-scroll-proportion="-26.576923">
               <folding />
             </state>
           </provider>
@@ -66,7 +66,7 @@
       <file leaf-file-name="zumbaContent.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/includes/zumba/zumbaContent.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="0" selection-start="1643" selection-end="2172" vertical-scroll-proportion="0.62818956">
+            <state line="61" column="2" selection-start="1720" selection-end="1720" vertical-scroll-proportion="0.66950184">
               <folding />
             </state>
           </provider>
@@ -553,14 +553,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/yoga/yogaContent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="0" selection-start="1501" selection-end="1801" vertical-scroll-proportion="-20.692308">
+        <state line="64" column="0" selection-start="1747" selection-end="1747" vertical-scroll-proportion="-26.576923">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/zumba/zumbaContent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="1643" selection-end="2172" vertical-scroll-proportion="0.62818956">
+        <state line="61" column="2" selection-start="1720" selection-end="1720" vertical-scroll-proportion="0.66950184">
           <folding />
         </state>
       </provider>
