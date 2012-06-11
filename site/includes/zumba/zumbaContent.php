@@ -42,21 +42,30 @@
             <div>Mansfield, OH 44907</div>
 <!--            <div>419.522.3511</div>-->
         </div>
+
+        <div class="spacer"></div>
+
+        <div>Burton Park</div>
+        <div class="indent">
+            <div>Sunset BLVD</div>
+            <div>Mansfield, OH 44907</div>
+            <!--            <div>419.522.3511</div>-->
+        </div>
         
     </div>
 </div>
 <!-- /locations -->
 
 <!-- Logo and Links -->
-<div class="sectionCanister" id='zumbaLogoArea'>
-    <div class="sectionTitle">Links</div>
-    <div class="center">
-        <a href="https://www.zumba.com/en-US/profiles/55573/" target="_blank">
-            <img src="/images/zumbaLogo.png" class="zumbaLogo" />
-        </a>
-        <div class='clear'></div>
-        <a href="https://www.zumba.com/en-US/profiles/55573/" target="_blank">My Zumba Profile Page</a>
-    </div>
-    <div class='clear'></div>
-</div>
+<!--<div class="sectionCanister" id='zumbaLogoArea'>-->
+<!--    <div class="sectionTitle">Links</div>-->
+<!--    <div class="center">-->
+<!--        <a href="https://www.zumba.com/en-US/profiles/55573/" target="_blank">-->
+<!--            <img src="/images/zumbaLogo.png" class="zumbaLogo" />-->
+<!--        </a>-->
+<!--        <div class='clear'></div>-->
+<!--        <a href="https://www.zumba.com/en-US/profiles/55573/" target="_blank">My Zumba Profile Page</a>-->
+<!--    </div>-->
+<!--    <div class='clear'></div>-->
+<!--</div>-->
 <!-- /Logo and Links -->
