@@ -1,10 +1,3 @@
-/**
-* Created with JetBrains PhpStorm.
-* User: Tom Coakley
-* Date: 4/30/12
-* Time: 9:06 PM
-*/
-
 
 var panel = new Class({
     Implements: [Options, Events],
@@ -89,11 +82,56 @@ var panel = new Class({
                     }.bind(this));
                     var sliderMargin = this.options.slider[options.direction.toLowerCase()].leftMargin;
                     sliderMorph.start({'margin-left': sliderMargin});
+                } else {
+                    this.slideToPanel(targetSize);
                 }
             }
 
         }).delay(options.delay, this);
     },
+    slideToPanel: function() {
+        var panelMargin = $(this.options.name + 'Wrapper').getCoordinates('content').left;
+        var panelMarginTop = $(this.options.name + 'Wrapper').getCoordinates('content').top;
+        var panelWidth = parseInt($(this.options.name + 'Wrapper').getSize().x);
+        panelMargin += parseInt(panelWidth/2) - 14;
+
+        var sliderMarginLeft = panelLocs[sectionName].slider;
+        if (panelWidth > 400) {
+            sliderMarginLeft = panelLocs[sectionName].sliderFull;
+        }
+
+        var sliderText = new Element("div", {
+            "id" : sectionName + 'SliderText' + direction,
+            "class" : 'panelSliderText'
+        });
+        var slider = new Element("div", {
+            "id" : sectionName + "Slider",
+            "class" : 'panelSlider',
+            styles: {
+                'margin-left': sliderMarginLeft,
+                'margin-top': panelMarginTop
+            }
+        });
+        sliderText.inject(slider);
+        slider.inject('content');
+
+        // show the slide panel
+        $(sectionName + 'Wrapper').set('morph', {duration: 500, transition: Fx.Transitions.Quart.easeInOut});
+        $(sectionName + 'Wrapper').morph({
+            opacity: [0],
+            'margin-left': panelMargin,
+            'width': 28
+        });
+        primeFade($(sectionName + "Slider"));
+        var sliderMorph = new Fx.Morph($(sectionName + "Slider"), {
+            duration: 600,
+            transition: Fx.Transitions.Quart.easeInOut
+        });
+        sliderMorph.start({opacity:[1]}).chain(function(){
+            var sliderMargin = panelLocs[sectionName][direction];
+            this.start({'margin-left': sliderMargin});
+        });
+    }
     panelToSlide: function(direction) {
         var panelMargin = $(this.options.name + 'Wrapper').getCoordinates('content').left;
         var panelMarginTop = $(this.options.name + 'Wrapper').getCoordinates('content').top;
