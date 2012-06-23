@@ -20,17 +20,17 @@
         
         <div>Mansfield YMCA</div>
         <div class="indent">
-            <div>750 Scholl Road</div>
-            <div>Mansfield, OH</div>
+            <div>750 Scholl Road, Mansfield</div>
 <!--            <div>419.522.3511</div>-->
         </div>
 
         <div class="spacer"></div>
 
-        <div>South Park</div>
+        <div><b>Yoga in the Park</b> @ South Park</div>
         <div class="indent">
-            <div>Brinkerhoff Ave</div>
-            <div>Mansfield, OH</div>
+            <div>*Free community class*</div>
+            <div>Brinkerhoff Ave, Mansfield</div>
+
             <!--            <div>419.522.3511</div>-->
         </div>
         
