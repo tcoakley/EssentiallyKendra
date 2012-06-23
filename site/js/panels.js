@@ -21,11 +21,10 @@ var panel = new Class({
     setCurrentSpecs: function(specs) {
         this.options.currentSpecs = Object.merge(this.options.currentSpecs, specs);
     },
-    addSize: function(name, specs) {
-        this.options.panelSizes[name] = specs;
-    },
     transition: function(targetSize,options) {
-        this.fireEvent('transitionTo' + targetSize);
+        this.debug("Transition to " + targetSize, this.options);
+
+        this.fireEvent('transitionTo' + this.sentenceCase(targetSize));
         // init
         if (options == undefined) {
             options = new Object();
@@ -38,7 +37,8 @@ var panel = new Class({
         // delay start
         (function(){
             // transition
-            this.fireEvent('transitionTo' + targetSize + 'Started');
+            this.fireEvent('transitionTo' +  this.sentenceCase(targetSize) + 'Started');
+            this.deactivateLinks();
 
             if (currentState != 'slider') {
 
@@ -47,6 +47,9 @@ var panel = new Class({
                     this.panelToSlide(options.direction);
 
                 } else {
+                    if (options.contentUrl === undefined) {
+                        options.contentUrl = this.options.panelSizes[targetSize].contentUrl;
+                    }
                     var panelSizes = this.options.panelSizes[targetSize];
                     if(options.contentUrl == undefined || options.contentUrl.length < 4) {
                         options.contentUrl = panelSizes.contentUrl;
@@ -57,14 +60,11 @@ var panel = new Class({
                         transition: Fx.Transitions.Quart.easeInOut
                     });
                     panelMorph.addEvent('complete', function(el) {
-                        this.fireEvent('transitionTo' + targetSize + 'Complete');
-                        this.activateLinks();
-                        this.options.currentSpecs = Object.merge(panelSizes,{'currentState': targetSize});
+                        this.completeTransition(targetSize);
                         this.fadeContent('in');
                     }.bind(this));
                     (function(){
                         this.fireEvent('transitionStarted');
-                        console.log(panelSizes);
                         panelMorph.start({
                             'width': panelSizes.width,
                             'margin-left': panelSizes.leftMargin
@@ -78,61 +78,80 @@ var panel = new Class({
                         transition: Fx.Transitions.Quart.easeInOut
                     });
                     sliderMorph.addEvent('complete', function(el) {
-                        this.fireEvent('transitionTo' + targetSize + 'Complete');
+                        this.completeTransition(targetSize);
                     }.bind(this));
                     var sliderMargin = this.options.slider[options.direction.toLowerCase()].leftMargin;
                     sliderMorph.start({'margin-left': sliderMargin});
                 } else {
-                    this.slideToPanel(targetSize);
+                    if (options.contentUrl === undefined) {
+                        options.contentUrl = this.options.panelSizes[targetSize].contentUrl;
+                    }
+                    var panelSizes = this.options.panelSizes[targetSize];
+                    if(options.contentUrl == undefined || options.contentUrl.length < 4) {
+                        options.contentUrl = panelSizes.contentUrl;
+                    }
+                    this.slideToPanel(targetSize, options);
                 }
             }
 
         }).delay(options.delay, this);
     },
-    slideToPanel: function() {
-        var panelMargin = $(this.options.name + 'Wrapper').getCoordinates('content').left;
-        var panelMarginTop = $(this.options.name + 'Wrapper').getCoordinates('content').top;
-        var panelWidth = parseInt($(this.options.name + 'Wrapper').getSize().x);
-        panelMargin += parseInt(panelWidth/2) - 14;
+    completeTransition: function(targetSize) {
+        this.activateLinks();
+        this.debug('Transition complete for ' + targetSize);
 
-        var sliderMarginLeft = panelLocs[sectionName].slider;
-        if (panelWidth > 400) {
-            sliderMarginLeft = panelLocs[sectionName].sliderFull;
+        if (targetSize != 'slider') {
+            this.options.currentSpecs = Object.merge(
+                this.options.panelSizes[targetSize],
+                {'currentState': targetSize}
+            );
+        } else {
+            this.options.currentSpecs.currentState = targetSize;
         }
-
-        var sliderText = new Element("div", {
-            "id" : sectionName + 'SliderText' + direction,
-            "class" : 'panelSliderText'
-        });
-        var slider = new Element("div", {
-            "id" : sectionName + "Slider",
-            "class" : 'panelSlider',
-            styles: {
-                'margin-left': sliderMarginLeft,
-                'margin-top': panelMarginTop
+        targetSize = this.sentenceCase(targetSize);
+        this.fireEvent('transitionTo' + targetSize + 'Complete');
+    },
+    sentenceCase: function(stringIn) {
+        return stringIn.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g,function(c){return c.toUpperCase()});
+    },
+    debug: function(message, object) {
+        if (this.options.debug !== undefined && this.options.debug) {
+            console.log(this.options.name + ": " + message);
+            if (object !== undefined) {
+                console.log(object);
             }
-        });
-        sliderText.inject(slider);
-        slider.inject('content');
+            console.log("--------------");
+        }
+    },
+    slideToPanel: function(targetSize, options) {
+        this.loadContent(options.contentUrl);
+        this.debug("slideToPanel " + targetSize, options);
 
-        // show the slide panel
-        $(sectionName + 'Wrapper').set('morph', {duration: 500, transition: Fx.Transitions.Quart.easeInOut});
-        $(sectionName + 'Wrapper').morph({
-            opacity: [0],
-            'margin-left': panelMargin,
-            'width': 28
-        });
-        primeFade($(sectionName + "Slider"));
-        var sliderMorph = new Fx.Morph($(sectionName + "Slider"), {
+        var panelSizes = this.options.panelSizes[targetSize];
+        var sliderMargin = panelSizes.leftMargin + ((panelSizes.width/2) - 14);
+
+        var sliderMorph = new Fx.Morph($(this.options.name + "Slider"), {
             duration: 600,
             transition: Fx.Transitions.Quart.easeInOut
         });
-        sliderMorph.start({opacity:[1]}).chain(function(){
-            var sliderMargin = panelLocs[sectionName][direction];
-            this.start({'margin-left': sliderMargin});
+        sliderMorph.addEvent('complete', function(el) {
+            sliderMorph.removeEvents('complete');
+            sliderMorph.start({opacity: [0]});
+            $(this.options.name + "Wrapper").set('morph', {duration: 500, transition: Fx.Transitions.Quart.easeInOut});
+            $(this.options.name + 'Wrapper').morph({
+                opacity: [1],
+                'margin-left': panelSizes.leftMargin,
+                'width': [28,panelSizes.width]
+            });
+            this.completeTransition(targetSize);
+            this.fadeContent('in');
+        }.bind(this));
+        sliderMorph.start({
+            'margin-left': sliderMargin
         });
-    }
+    },
     panelToSlide: function(direction) {
+        this.debug("panelToSlide " + direction);
         var panelMargin = $(this.options.name + 'Wrapper').getCoordinates('content').left;
         var panelMarginTop = $(this.options.name + 'Wrapper').getCoordinates('content').top;
         var panelWidth = parseInt($(this.options.name + 'Wrapper').getSize().x);
@@ -169,7 +188,7 @@ var panel = new Class({
             var sliderMargin = this.options.slider[direction.toLowerCase()].leftMargin;
             sliderMorph.addEvent('complete', function(el) {
                 this.options.currentSpecs = Object.merge(this.options.currentSpecs,{'currentState': 'slider'});
-                this.fireEvent('transitionToSliderComplete');
+                this.completeTransition('slider');
 
             }.bind(this));
             sliderMorph.start({'margin-left': sliderMargin});
@@ -195,6 +214,12 @@ var panel = new Class({
             this.primeOptions(options);
             options = Object.merge(options, {'delay' : 1, 'duration' : 900});
         }
+        if (options.delay == undefined) {
+            options.delay = 1;
+        }
+        if (options.duration == undefined) {
+            options.duration = 900;
+        }
         (function(){
             this.fireEvent('showStarted');
             var targetPanel = $(this.options.name + 'Canister');
@@ -212,24 +237,23 @@ var panel = new Class({
         }).delay(options.delay, this);
 
     },
-    fadeContent: function(direction, loadContent) {
-
+    fadeContent: function(direction, contentUrl) {
+        this.debug("fadeContent: " + direction + " ["  + contentUrl + "]");
         var fadeTween = new Fx.Tween(this.options.name + 'Content', {
             duration: 300,
             transition: Fx.Transitions.Quart.easeInOut,
             property: 'opacity'
         });
 
-        if (loadContent !== undefined) {
-            $(this.options.name + 'Content').empty();
+        if (contentUrl !== undefined) {
             fadeTween.addEvent('complete', function() {
-                $(this.options.name + 'Content').load(loadContent);
+                this.loadContent(contentUrl);
             }.bind(this));
+
         }
         if (direction != 'in') {
             fadeTween.start(1,0);
         } else {
-            console.log(this.options.currentSpecs.currentState);
             if (this.options.currentSpecs.currentState == 'max') {
                 $(this.options.name + "Content").addClass('scrollable');
             } else {
@@ -238,8 +262,16 @@ var panel = new Class({
             fadeTween.start(0,1);
         }
     },
+    loadContent: function(contentUrl) {
+        this.debug(contentUrl);
+        $(this.options.name + 'Content').empty();
+        $(this.options.name + 'Content').load(contentUrl);
+    },
     activateLinks: function() {
-
+        this.options.clickable = true;
+    },
+    deactivateLinks: function() {
+        this.options.clickable = false;
     }
 });
 
@@ -252,6 +284,7 @@ var panel = new Class({
 var zumbaPanel = new Class({
     Extends: panel,
     options: {
+        debug: true,
         name: 'zumba',
         panelSizes: {
             standard: {

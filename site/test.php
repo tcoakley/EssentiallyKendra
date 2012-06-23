@@ -27,22 +27,37 @@
 
         window.addEvent('load', function() {
             var myYogaPanel = new yogaPanel();
+            var myZumbaPanel = new zumbaPanel();
             myYogaPanel.addEvent('showStarted', function() {
                 console.log('Transition started');
             });
             myYogaPanel.addEvent('showComplete', function() {
-                this.transition('slider', {'direction' : 'Left', 'delay' : 2000});
+                myYogaPanel.transition('slider', {'direction' : 'Left', 'delay' : 2000});
+                myZumbaPanel.transition('slider', {'direction' : 'Left', 'delay' : 2000});
             });
             myYogaPanel.addEvent('transitionToSliderComplete', secondTransition);
+            myZumbaPanel.addEvent('transitionToSliderComplete', thirdTransition);
+
+            function thirdTransition() {
+                myZumbaPanel.transition('standard', {
+                    'delay' : 500
+                });
+
+            }
 
             function secondTransition() {
-                myYogaPanel.transition('slider', {'direction': 'Right','delay' : 500});
+                myYogaPanel.transition('standard', {
+                    'contentUrl': '/getContent.php?sn=zumba&fn=zumbaContent',
+                    'delay' : 500
+                });
+
                 myYogaPanel.removeEvent('transitionToSliderComplete', secondTransition);
             }
 
 //            myYogaPanel.transition('slider', {delay: 2000});
 
             myYogaPanel.show();
+            myZumbaPanel.show({'delay':500});
 
 
 //             =======================================================================================================
