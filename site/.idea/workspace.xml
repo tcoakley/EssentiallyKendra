@@ -25,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="layout.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="layout.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/layout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="0" selection-start="4018" selection-end="4149" vertical-scroll-proportion="0.89236546">
+            <state line="119" column="0" selection-start="4018" selection-end="4149" vertical-scroll-proportion="-14.26">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -63,10 +63,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="817" selection-end="817" vertical-scroll-proportion="8.884615">
+            <state line="19" column="0" selection-start="817" selection-end="817" vertical-scroll-proportion="-0.041312274">
               <folding />
             </state>
           </provider>
@@ -402,13 +402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="817" selection-end="817" vertical-scroll-proportion="8.884615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/panels.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="204" column="4" selection-start="8229" selection-end="8229" vertical-scroll-proportion="-10.96">
@@ -432,10 +425,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/layout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="0" selection-start="4018" selection-end="4149" vertical-scroll-proportion="0.89236546">
+        <state line="119" column="0" selection-start="4018" selection-end="4149" vertical-scroll-proportion="-14.26">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="817" selection-end="817" vertical-scroll-proportion="-0.041312274">
+          <folding />
         </state>
       </provider>
     </entry>
