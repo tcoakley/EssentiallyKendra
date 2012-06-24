@@ -28,8 +28,10 @@
       <file leaf-file-name="layout.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/layout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="120" column="3" selection-start="4022" selection-end="4022" vertical-scroll-proportion="0.9399293">
-              <folding />
+            <state line="119" column="0" selection-start="4018" selection-end="4149" vertical-scroll-proportion="0.89236546">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -73,7 +75,7 @@
       <file leaf-file-name="test.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="60" selection-start="1593" selection-end="1593" vertical-scroll-proportion="-3.3333333">
+            <state line="30" column="0" selection-start="1140" selection-end="1288" vertical-scroll-proportion="-6.3137255">
               <folding />
             </state>
           </provider>
@@ -101,9 +103,9 @@
         <option value="$PROJECT_DIR$/css/layout.css" />
         <option value="$PROJECT_DIR$/js/panelSets.js" />
         <option value="$PROJECT_DIR$/js/panels.js" />
-        <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/js/stringFunctions.js" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/js/layout.js" />
       </list>
     </option>
@@ -393,23 +395,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="60" selection-start="1593" selection-end="1593" vertical-scroll-proportion="-3.3333333">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/stringFunctions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="0" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/panelSets.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="20" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -428,10 +416,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="0" selection-start="1140" selection-end="1288" vertical-scroll-proportion="-6.3137255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/panelSets.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="20" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/layout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="3" selection-start="4022" selection-end="4022" vertical-scroll-proportion="0.9399293">
-          <folding />
+        <state line="119" column="0" selection-start="4018" selection-end="4149" vertical-scroll-proportion="0.89236546">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

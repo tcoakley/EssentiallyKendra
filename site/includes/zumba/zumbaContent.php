@@ -20,8 +20,7 @@
        
         <div>Foundation Academy</div>
         <div class="indent">
-            <div>1050 Wyandotte Ave</div>
-            <div>Mansfield, OH</div>
+            <div>1050 Wyandotte Ave, Mansfield</div>
 <!--            <div>Off Trimble Rd (old Roseland School)</div>-->
         </div>
         
@@ -29,8 +28,8 @@
         
         <div>TWE Church</div>
         <div class="indent">
-            <div>374 Willowood Dr E</div>
-            <div>Ontario, OH</div>
+            <div>*Free community class*</div>
+            <div>374 Willowood Dr E, Ontario</div>
 <!--            <div>Across from El Campestre on W. 4th St</div>-->
         </div>
         
@@ -38,9 +37,18 @@
         
         <div>Mansfield YMCA</div>
         <div class="indent">
-            <div>750 Scholl Road</div>
-            <div>Mansfield, OH 44907</div>
+            <div>750 Scholl Road, Mansfield</div>
 <!--            <div>419.522.3511</div>-->
+        </div>
+
+        <div class="spacer"></div>
+
+        <div><b>Zumba in the Park</b> @ Burton Park</div>
+        <div class="indent">
+            <div>*Free community class*</div>
+            <div>Sunset Blvd, Mansfield</div>
+
+            <!--            <div>419.522.3511</div>-->
         </div>
         
     </div>
@@ -50,13 +58,13 @@
 <!-- Logo and Links -->
 <div class="sectionCanister" id='zumbaLogoArea'>
     <div class="sectionTitle">Links</div>
-    <div class="center">
-        <a href="https://www.zumba.com/en-US/profiles/55573/" target="_blank">
-            <img src="/images/zumbaLogo.png" class="zumbaLogo" />
-        </a>
-        <div class='clear'></div>
+<!--    <div class="center">-->
+<!--        <a href="https://www.zumba.com/en-US/profiles/55573/" target="_blank">-->
+<!--            <img src="/images/zumbaLogo.png" class="zumbaLogo" />-->
+<!--        </a>-->
+<!--        <div class='clear'></div>-->
         <a href="https://www.zumba.com/en-US/profiles/55573/" target="_blank">My Zumba Profile Page</a>
-    </div>
-    <div class='clear'></div>
+<!--    </div>-->
+<!--    <div class='clear'></div>-->
 </div>
 <!-- /Logo and Links -->

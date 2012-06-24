@@ -52,6 +52,11 @@ window.addEvent('domready', function() {
     }
 });
 window.addEvent('load', function() {
+
+    // initialize panels
+    var myYogaPanel = new yogaPanel();
+    var myZumbaPanel = new zumbaPanel();
+    var myDoTerraPanel = new doTerraPanel();
     
     // Control Variables
     var backgroundLoaded = false;
@@ -112,9 +117,10 @@ window.addEvent('load', function() {
     }
     
     function fadeContentPanels() {
-        myZumbaCanister.show({'delay': 500});
-        myYogaCanister.show({'delay': 800});
-        myDoTerraCanister.show({'delay': 1100});
+
+        myZumbaPanel.show({'delay': 500});
+        myYogaPanel.show({'delay': 800});
+        myDoTerraPanel.show({'delay': 1100});
 
     }
     

@@ -20,9 +20,18 @@
         
         <div>Mansfield YMCA</div>
         <div class="indent">
-            <div>750 Scholl Road</div>
-            <div>Mansfield, OH 44907</div>
+            <div>750 Scholl Road, Mansfield</div>
 <!--            <div>419.522.3511</div>-->
+        </div>
+
+        <div class="spacer"></div>
+
+        <div><b>Yoga in the Park</b> @ South Park</div>
+        <div class="indent">
+            <div>*Free community class*</div>
+            <div>Brinkerhoff Ave, Mansfield</div>
+
+            <!--            <div>419.522.3511</div>-->
         </div>
         
     </div>
@@ -49,8 +58,8 @@
     <div>
         200 RYT YogaFit-Inspired
     </div>
-    <br/>
-    <div class='center'><img src='/images/om.png' width="120" height="120" /></div>
-
+<!--    <br/>-->
+<!--    <div class='center'><img src='/images/om.png' width="120" height="120" /></div>-->
+<!---->
 </div>
 
