@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/js/panels.js" line="131" />
+    <bookmark url="file://$PROJECT_DIR$/js/panels.js" line="125" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3336efb3-4f8b-4012-9c60-c3f7cc68dd73" name="Default" comment="" />
@@ -25,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="layout.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="layout.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/layout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="355" column="0" selection-start="12156" selection-end="13038" vertical-scroll-proportion="0.0">
+            <state line="120" column="3" selection-start="4022" selection-end="4022" vertical-scroll-proportion="0.9399293">
               <folding />
             </state>
           </provider>
@@ -37,16 +37,43 @@
       <file leaf-file-name="panels.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/panels.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="297" column="73" selection-start="11710" selection-end="11710" vertical-scroll-proportion="-4.84">
+            <state line="204" column="4" selection-start="8229" selection-end="8229" vertical-scroll-proportion="-10.96">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="panelSets.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/panelSets.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="20" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stringFunctions.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/stringFunctions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="0" selection-start="817" selection-end="817" vertical-scroll-proportion="8.884615">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="0" selection-start="1741" selection-end="1741" vertical-scroll-proportion="0.37593985">
+            <state line="37" column="60" selection-start="1593" selection-end="1593" vertical-scroll-proportion="-3.3333333">
               <folding />
             </state>
           </provider>
@@ -62,8 +89,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/message_src.js" />
-        <option value="$PROJECT_DIR$/includes/constants.php" />
         <option value="$PROJECT_DIR$/emailSignup.php" />
         <option value="$PROJECT_DIR$/includes/yoga/05282012.php" />
         <option value="$PROJECT_DIR$/includes/zumba/monday.php" />
@@ -72,12 +97,14 @@
         <option value="$PROJECT_DIR$/includes/yoga/wednesday.php" />
         <option value="$PROJECT_DIR$/includes/zumba/thursday.php" />
         <option value="$PROJECT_DIR$/includes/zumba/saturday.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/includes/yoga/saturday.php" />
-        <option value="$PROJECT_DIR$/js/layout.js" />
         <option value="$PROJECT_DIR$/css/layout.css" />
+        <option value="$PROJECT_DIR$/js/panelSets.js" />
         <option value="$PROJECT_DIR$/js/panels.js" />
         <option value="$PROJECT_DIR$/test.php" />
+        <option value="$PROJECT_DIR$/js/stringFunctions.js" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/js/layout.js" />
       </list>
     </option>
   </component>
@@ -217,11 +244,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="Y:\EssentiallyKendra\site\js" />
       <recent name="C:\xampp\htdocs\DD\Kendra\site\includes\zumba" />
       <recent name="C:\xampp\htdocs\DD\Kendra\site\includes\yoga" />
       <recent name="C:\xampp\htdocs\DD\Kendra\site\js" />
       <recent name="C:\xampp\htdocs\DD\Kendra\site" />
-      <recent name="C:\xampp\htdocs\DD\Kendra\site\includes\doTerra" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\DD\Kendra\site\notes" />
@@ -295,7 +322,7 @@
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15154749" sideWeight="0.0" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15101388" sideWeight="0.0" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14834578" sideWeight="0.49542335" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -366,23 +393,44 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/layout.js">
+    <entry file="file://$PROJECT_DIR$/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="355" column="0" selection-start="12156" selection-end="13038" vertical-scroll-proportion="0.0">
+        <state line="37" column="60" selection-start="1593" selection-end="1593" vertical-scroll-proportion="-3.3333333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/stringFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/panelSets.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="20" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="817" selection-end="817" vertical-scroll-proportion="8.884615">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/panels.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="297" column="73" selection-start="11710" selection-end="11710" vertical-scroll-proportion="-4.84">
+        <state line="204" column="4" selection-start="8229" selection-end="8229" vertical-scroll-proportion="-10.96">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.php">
+    <entry file="file://$PROJECT_DIR$/js/layout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1741" selection-end="1741" vertical-scroll-proportion="0.37593985">
+        <state line="120" column="3" selection-start="4022" selection-end="4022" vertical-scroll-proportion="0.9399293">
           <folding />
         </state>
       </provider>

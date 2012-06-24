@@ -1,5 +1,6 @@
 
 var panel = new Class({
+    Extends: stringFunctions,
     Implements: [Options, Events],
     options: {
         name: null,
@@ -21,6 +22,12 @@ var panel = new Class({
     setCurrentSpecs: function(specs) {
         this.options.currentSpecs = Object.merge(this.options.currentSpecs, specs);
     },
+    canTransition: function() {
+        if (this.options.clickable) {
+            return true;
+        }
+        return false;
+    },
     transition: function(targetSize,options) {
         this.debug("Transition to " + targetSize, this.options);
 
@@ -38,6 +45,7 @@ var panel = new Class({
         (function(){
             // transition
             this.fireEvent('transitionTo' +  this.sentenceCase(targetSize) + 'Started');
+            this.debug('transitionTo' +  this.sentenceCase(targetSize) + 'Started');
             this.deactivateLinks();
 
             if (currentState != 'slider') {
@@ -63,13 +71,11 @@ var panel = new Class({
                         this.completeTransition(targetSize);
                         this.fadeContent('in');
                     }.bind(this));
-                    (function(){
-                        this.fireEvent('transitionStarted');
-                        panelMorph.start({
-                            'width': panelSizes.width,
-                            'margin-left': panelSizes.leftMargin
-                        });
-                    }).delay(options.delay, this);
+                    this.fireEvent('transitionStarted');
+                    panelMorph.start({
+                        'width': panelSizes.width,
+                        'margin-left': panelSizes.leftMargin
+                    });
                 }
             } else {
                 if (targetSize == 'slider') {
@@ -110,18 +116,6 @@ var panel = new Class({
         }
         targetSize = this.sentenceCase(targetSize);
         this.fireEvent('transitionTo' + targetSize + 'Complete');
-    },
-    sentenceCase: function(stringIn) {
-        return stringIn.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g,function(c){return c.toUpperCase()});
-    },
-    debug: function(message, object) {
-        if (this.options.debug !== undefined && this.options.debug) {
-            console.log(this.options.name + ": " + message);
-            if (object !== undefined) {
-                console.log(object);
-            }
-            console.log("--------------");
-        }
     },
     slideToPanel: function(targetSize, options) {
         this.loadContent(options.contentUrl);
@@ -275,100 +269,3 @@ var panel = new Class({
     }
 });
 
-/* ====================================================================================== */
-/* ====================================================================================== */
-/* ====================================================================================== */
-/* ====================================================================================== */
-/* ====================================================================================== */
-
-var zumbaPanel = new Class({
-    Extends: panel,
-    options: {
-        debug: true,
-        name: 'zumba',
-        panelSizes: {
-            standard: {
-                leftMargin: 10,
-                width: 320,
-                contentUrl: '/getContent.php?sn=zumba&fn=zumbaContent'
-            },
-            max: {
-                leftMargin: 10,
-                width: 900,
-                contentUrl: '/getContent.php?sn=zumba&fn=zumbaContentMax'
-            }
-        },
-        slider: {
-            left: {
-                leftMargin: 10
-            },
-            right: {
-                leftMargin: null
-            }
-        }
-    },
-    initialize: function(options) {
-        this.parent(options);
-
-    }
-});
-
-var yogaPanel = new Class({
-    Extends: panel,
-    options: {
-        name: 'yoga',
-        panelSizes: {
-            standard: {
-                leftMargin: 340,
-                width: 320,
-                contentUrl: '/getContent.php?sn=yoga&fn=yogaContent'
-            },
-            max: {
-                leftMargin: 50,
-                width: 900,
-                contentUrl: '/getContent.php?sn=yoga&fn=yogaContentMax'
-            }
-        },
-        slider: {
-            left: {
-                leftMargin: 50
-            },
-            right: {
-                leftMargin: 920
-            }
-        }
-    },
-    initialize: function(options) {
-        this.parent(options);
-    }
-});
-
-var doTerraPanel = new Class({
-    Extends: panel,
-    options: {
-        name: 'doTerra',
-        panelSizes: {
-            standard: {
-                leftMargin: 340,
-                width: 320,
-                contentUrl: '/getContent.php?sn=yoga&fn=yogaContent'
-            },
-            max: {
-                leftMargin: 50,
-                width: 900,
-                contentUrl: '/getContent.php?sn=yoga&fn=yogaContentMax'
-            }
-        },
-        slider: {
-            left: {
-                leftMargin: 50
-            },
-            right: {
-                leftMargin: 920
-            }
-        }
-    },
-    initialize: function(options) {
-        this.parent(options);
-    }
-});

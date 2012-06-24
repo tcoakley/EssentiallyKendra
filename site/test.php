@@ -17,7 +17,9 @@
     <!-- js -->
     <script type="text/javascript" src="/js/mootools-core-1.4.5-full-compat-yc.js"></script>
     <script type="text/javascript" src="/js/mootools-more-1.4.0.1.js"></script>
+    <script type="text/javascript" src="/js/stringFunctions.js"></script>
     <script type="text/javascript" src="/js/panels.js"></script>
+    <script type="text/javascript" src="/js/panelSets.js"></script>
     <!-- /js -->
 
 </head>
@@ -28,12 +30,12 @@
         window.addEvent('load', function() {
             var myYogaPanel = new yogaPanel();
             var myZumbaPanel = new zumbaPanel();
-            myYogaPanel.addEvent('showStarted', function() {
-                console.log('Transition started');
-            });
+            var myDoTerraPanel = new doTerraPanel();
+
             myYogaPanel.addEvent('showComplete', function() {
                 myYogaPanel.transition('slider', {'direction' : 'Left', 'delay' : 2000});
                 myZumbaPanel.transition('slider', {'direction' : 'Left', 'delay' : 2000});
+                myDoTerraPanel.transition('max', {'delay': 3000});
             });
             myYogaPanel.addEvent('transitionToSliderComplete', secondTransition);
             myZumbaPanel.addEvent('transitionToSliderComplete', thirdTransition);
@@ -47,9 +49,9 @@
 
             function secondTransition() {
                 myYogaPanel.transition('standard', {
-                    'contentUrl': '/getContent.php?sn=zumba&fn=zumbaContent',
                     'delay' : 500
                 });
+                myDoTerraPanel.transition('standard', {'delay': 500});
 
                 myYogaPanel.removeEvent('transitionToSliderComplete', secondTransition);
             }
@@ -58,6 +60,7 @@
 
             myYogaPanel.show();
             myZumbaPanel.show({'delay':500});
+            myDoTerraPanel.show({'delay':1000});
 
 
 //             =======================================================================================================
@@ -135,7 +138,7 @@
 
                     <?php require_once('includes/yoga/yogaLayout.php'); ?>
 
-<!--                    --><?php //require_once('includes/doTerra/doTerraLayout.php'); ?>
+                    <?php require_once('includes/doTerra/doTerraLayout.php'); ?>
 
                     <div class="clear"></div>
                     <!-- footer -->
