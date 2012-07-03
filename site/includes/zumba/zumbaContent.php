@@ -28,7 +28,6 @@
         
         <div>TWE Church</div>
         <div class="indent">
-            <div>*Free community class*</div>
             <div>374 Willowood Dr E, Ontario</div>
 <!--            <div>Across from El Campestre on W. 4th St</div>-->
         </div>
@@ -45,7 +44,6 @@
 
         <div><b>Zumba in the Park</b> @ Burton Park</div>
         <div class="indent">
-            <div>*Free community class*</div>
             <div>Sunset Blvd, Mansfield</div>
 
             <!--            <div>419.522.3511</div>-->

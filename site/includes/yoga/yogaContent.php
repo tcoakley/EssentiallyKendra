@@ -28,7 +28,6 @@
 
         <div><b>Yoga in the Park</b> @ South Park</div>
         <div class="indent">
-            <div>*Free community class*</div>
             <div>Brinkerhoff Ave, Mansfield</div>
 
             <!--            <div>419.522.3511</div>-->
